@@ -3,7 +3,7 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
-        <entry key="C:\Users\Theodore\Downloads\dataset 023.csv">
+        <entry key="C:\Users\Theodore\Downloads\dataset033.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -17,7 +17,21 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\src\Labs\Week 05-06 Hooke's Law\dataset 011.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\src\Labs\Week 05-06 Hooke's Law\dataset 012.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\src\Labs\Week 05-06 Hooke's Law\dataset 013.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
