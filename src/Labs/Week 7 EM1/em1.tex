@@ -1,3 +1,4 @@
+%! suppress = EscapeHashOutsideCommand
 %! Author = Theodore Capinski
 %! Date = 3/5/2024
 
@@ -29,6 +30,7 @@
                                                    \node[anchor=south west,inner sep=0] (image) at (0,0) { #1};\begin{scope}[x={(image.south east)},y={(image.north west)}]}{\end{scope}\end{tikzpicture}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newcommand{\todo}[1]{\textcolor{red}{TODO: #1}\PackageWarning{TODO:}{#1!}}
 
 \title{Physics 5BL Lab Report EM1}
 \author{T.~Capinski \and A.~Patel}
@@ -119,7 +121,7 @@
             0.1 &\le 0
         \end{align*}
     \end{e}
-    \TODO{fix the above equation}
+    \todo{fix the above equation}
 
     This considers the error in the measurement and the error in the expected value.
     The use of a DMM makes human error virtually nonexistent.
@@ -128,6 +130,20 @@
     \section{Voltage With Resistors in Series}\label{sec:voltage}
 
     \subsection{Methods}\label{subsec:voltage_methods}
+
+    \begin{figure}[h]
+        \begin{center}
+            \begin{circuitikz}[american]
+                \draw (0,0) to[battery1=$V_1$, inverted] ++(6,0)
+                -- ++(0,-3)
+                to[R=$R_1$] ++(-3,0)
+                to[R=$R_2$, *-*] ++(-3,0)
+                -- ++(0,3);
+            \end{circuitikz}
+        \end{center}
+        \caption {Abstract circuit configuration for measuring current. $R_2$ is the 1 $\Omega$ resistor which it is measured across.}
+        \label{fig:current_setup}
+    \end{figure}
 
     \subsection{Analysis}\label{subsec:voltage_analysis}
 
@@ -149,6 +165,54 @@
         \label{fig:ohmic_setup}
     \end{figure}
 
+    To verify Ohm's Law, we set up a circuit with a 1 $\Omega$ resistor and an LED.
+    The IOLab was used to provide a voltage to the circuit.
+    The DMM was used to measure the voltage across the resistor.
+    This can be seen in Figure~\ref{fig:ohmic_setup}.
+    The IOLab was set to provide a voltage ranging from 1 V to 3.3 V.
+
+    First, we measured Ohmic behaviour.
+    The DMM was set to measure voltage, and the banana cables were connected to the resistor.
+    We recorded the voltage across the resistor as the voltage was increased.
+    This resulted in the following data:
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=1.0\textwidth]{resources/images/em1_2a_VvsI}
+        \caption{Voltage and current data for the ohmic behaviour experiment.}
+        \label{fig:ohmic_data}
+    \end{figure}
+
+    The data shows a linear relationship between the voltage and the current, as expected.
+
+    Next, we measured non-ohmic behaviour.
+    The LED was connected in series with a 1 k$\Omega$ resistor.
+    We recorded the voltage across the LED as the DAC voltage was increased.
+    This resulted in the following data:
+    \begin{figure}[h!]
+        \begin{align*}
+            \begin{array}{|c|c|}
+                \hline
+                \text{Voltage (V)} & \text{Current (A)} \\
+                \hline
+                0.0 & 0.0 \\
+                0.3 & 0.01 \\
+                0.6 & 0.02 \\
+                1.0 & 0.03 \\
+                1.3 & 0.04 \\
+                1.6 & 0.05 \\
+                1.9 & 0.06 \\
+                2.2 & 0.07 \\
+                2.5 & 0.08 \\
+                2.8 & 0.09 \\
+                3.3 & 0.1 \\
+                \hline
+            \end{array}
+        \end{align*}
+        \caption{Voltage and current data for the non-ohmic behaviour experiment.}
+        \label{fig:non_ohmic_data}
+    \end{figure}
+    \todo{graph the non-ohmic data}
 
     \subsection{Analysis}\label{subsec:ohmic_analysis}
 
@@ -181,7 +245,7 @@
     We then used the DMM to measure the voltage across the resistors.
     The 1 $\Omega$ resistors added a negligible amount of resistance to the circuit, allowing them to act as ammeters.
 
-    \TODO{Add the kirchhoff setup figure}
+    \todo{Add the kirchhoff setup figure}
 
     \subsection{Analysis}\label{subsec:kirchoff_analysis}
 
@@ -192,7 +256,7 @@
         Loop~2: V_2 - I_2 R_2 - I_3 R_3 &= 0 \\
         Junction~A: I_3 - I_2 - I_1 &= 0
     \end{align*}
-    \TODO{Explain the sign of each term?}
+    \todo{Explain the sign of each term?}
     These equations give:
     \begin{align*}
         I_1 &= \frac{V_1(R_2 + R_3) - V_2 R_3}{R_1 R_2 + R_2 R_3 + R_1 R_3} \\
@@ -214,7 +278,7 @@
         I_{2exp} &= 0.3 \pm 0.1 \text{ A} \\
         I_{3exp} &= 0.6 \pm 0.1 \text{ A}
     \end{align*}
-    \TODO{Propogate the error}
+    \todo{Propogate the error}
 
     With the DMM, we measured the currents to be:
     \begin{align*}
@@ -222,7 +286,7 @@
         I_{2mea} &= 0.231 \pm 0.001 \text{ A} \\
         I_{3mea} &= 0.466 \pm 0.001 \text{ A}
     \end{}
-    \TODO{Actually use the DMM to measure the currents}
+    \todo{Actually use the DMM to measure the currents}
 
     The agreement test, from Equation~\ref{eq:agreement_test}, shows that the measured values are within the expected range.
     \begin{e}
@@ -232,12 +296,12 @@
             0.064 &\le 0
         \end{align*}
     \end{e}
-    \TODO{Fix the above equation (filled in by copilot)}
+    \todo{Fix the above equation (filled in by copilot)}
 
     \subsection{Conclusion}\label{subsec:kirchoff_conclusion}
 
-    \TODO{Explain the results of the agreement test}
-    \TODO{Consider sources of error}
+    \todo{Explain the results of the agreement test}
+    \todo{Consider sources of error}
     etc\ldots
 
 \end{document}
