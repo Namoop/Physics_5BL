@@ -127,10 +127,11 @@
     The use of a DMM makes human error virtually nonexistent.
     In conclusion, the measured resistance is within the expected range, and the DMM is a reliable tool for measuring resistance.
 
-    \section{Voltage With Resistors in Series}\label{sec:voltage}
+    \section{Voltage With Resistors in Series (Part 1A)}\label{sec:voltage}
 
     \subsection{Methods}\label{subsec:voltage_methods}
 
+    \todo{change following figure if this section is for part 1a the figure is wrong, it should have 2 10k ohms resistors}
     \begin{figure}[h]
         \begin{center}
             \begin{circuitikz}[american]
@@ -148,6 +149,28 @@
     \subsection{Analysis}\label{subsec:voltage_analysis}
 
     \subsection{Conclusion}\label{subsec:voltage_conclusion}
+
+    \section{Measuring Current (Part 1B)}\label{sec:current}
+
+    \subsection{Methods}\label{subsec:current_methods}
+
+    \begin{figure}[h]
+        \begin{center}
+            \begin{circuitikz}[american]
+                \draw (0,0) to[battery1=$V_1$, inverted] ++(6,0)
+                -- ++(0,-3)
+                to[R=$R_1$] ++(-3,0)
+                to[R=$R_2$, *-*] ++(-3,0)
+                -- ++(0,3);
+            \end{circuitikz}
+        \end{center}
+        \caption {Abstract circuit configuration for measuring current. $R_2$ is the 1 $\Omega$ resistor which it is measured across.}
+        \label{fig:current_setup}
+    \end{figure}
+
+    \subsection{Analysis}\label{subsec:current_analysis}
+
+    \subsection{Conclusion}\label{subsec:current_conclusion}
 
     \section{Ohmic and Non-Ohmic Behaviour}\label{sec:ohmic}
 
