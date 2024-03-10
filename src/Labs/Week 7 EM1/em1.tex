@@ -43,38 +43,18 @@
     \section*{Introduction}\label{sec:introduction}
     \addcontentsline{toc}{section}{Introduction}
 
-    This report will cover the Ohm’s Law lab. We will be employing tools
-    such as the Digital Multimeter (DMM) and the IOLab apparatus. Through
-    measurements of resistance, current, and voltage, we will measure Ohmic
-    and non-Ohmic behaviors in circuit elements, distinguishing between components that adhere to Ohm’s Law and those that exhibit nonlinear characteristics.
+    This report will cover the Ohm's Law lab. We will be employing tools such as the Digital Multimeter (DMM) and the IOLab apparatus. Through measurements of resistance, current, and voltage, we will measure Ohmic and non-Ohmic behaviors in circuit elements, distinguishing between components that adhere to Ohm's Law and those that exhibit nonlinear characteristics.
+
+    In addition, the lab will incorporate the application of Kirchhoff's Circuit Rules, which are used for analyzing circuit configurations. By employing the Junction Rule and Loop Rule, we can gain insight into the conservation of charge and energy within electrical circuits.
+
+    For experiment 0, we simply measured the resistance of a 1 $\Omega$ resistor, however, we found that our measurement was outside the expected range of values using .01 $\Omega$ as the error in the resistors measurement. 
+
+    For experiment 1A, we first measured the transfer ratio (H ≡ Vout/Vin) of a circuit with 2 1000 $\Omega$ resistors in it, which we found to be .5005, inside the range of error for the accepted value of 0.5. we then used the DMM to measure voltage, comparing this to our voltage from the previous part, and finding that they both agreed with each other. For experiment 1B, we created a circuit with a 10,000 $\Omega$ resistor in it and measured the current using both the IOLab and the DMM. Our measured current from the IOLab was 0.229 mA, slightly out of the range of the accepted value of 0.2 mA. However, when using the DMM, we measured exactly 0.2 mA. We then determined the IOLab had higher sensitivity due to the large amount of decimals it gave and its high error from the expected value.
+
+    For experiment 2A, we first measured the current across a 10,000 $\Omega$ resistor to measure ohmic behavior. We used 10 different input voltages and found that it obeyed ohms law. We then calculated the resistance of the resistor to be 9379.79 ± 233.97 Ω, which is slightly out of range of the accepted value. For experiment 2B, we measured the voltage across 2 LEDs to test for ohmic behavior. We used a 1000 $\Omega$ resistor in series to limit current and again took 10 data points for each LED. We found that both green and red LEDs did not obey ohms law, as they both needed a minimum voltage difference in order to let current through, then acted like wires. We also found the resistance of the resistor to be 996.50 ± 2.56 Ω when using the green LED and 989.35 ± 10.81 Ω when using the red LED, which were both inside the acceptable range of values. This is because the LED acted like a wire once the minimum voltage was met, so it allowed us to properly measure resistance.
+
+    For experiment 3, we measured the current across different resistors in a circuit involving multiple batteries and resistors. Our data did not match the predicted values and we could not verify Kirchhoffs junction rule equation.
     
-    In addition, the lab will incorporate the application of Kirchhoff’s Circuit
-    Rules, which are used for analyzing circuit configurations. By employing the
-    Junction Rule and Loop Rule, we can gain insight into the conservation of
-    charge and energy within electrical circuits.
-    
-    For experiment 0, we simply measured the resistance of a 1 Ω resistor,
-    however, we found that our measurement was outside the expected range of
-    values using .01 Ω as the error in the resistors measurement.
-    
-    For experiment 1A, we first measured the transfer ratio (H Vout/Vin)
-    of a circuit with 2 1000 Ω resistors in it, which we found to be .5005, inside
-    the range of error for the accepted value of 0.5. we then used the DMM
-    to measure voltage, comparing this to our voltage from the previous part,
-    and finding that they both agreed with each other. For experiment 1B,
-    we created a circuit with a 10,000 Ω resistor in it and measured the current
-    using both the IOLab and the DMM. Our measured current from the IOLab
-    was 0.229 mA, slightly out of the range of the accepted value of 0.2 mA.
-    However, when using the DMM, we measured exactly 0.2 mA. We then
-    determined the IOLab had higher sensitivity due to the large amount of
-    decimals it gave and its high error from the expected value.
-
-    For experiment 2
-
-    For experiment 3, we measured the voltage across a 1 Ω resistor and
-
-
-
     \section*{Theory}\label{sec:theory}
     Ohm's law states that the current through a conductor between two points is directly proportional to the voltage across the two points.
     This relationship is represented by the equation
@@ -115,7 +95,7 @@
     \end{equation}
 
 
-    \section{Measuring Resistance}\label{sec:measuring-resistance}
+    \section{Measuring Resistance (Part 0)}\label{sec:measuring-resistance}
 
 
     \subsection{Methods}\label{subsec:resistance_methods}
@@ -145,22 +125,20 @@
     The agreement test, from Equation~\ref{eq:agreement_test}, shows that the measured value is within the expected range.
     \begin{e}
         \begin{align*}
-            |1.1 - 1| &\le 2 \sqrt{0.001^2 - 0.01^2} \\
-            0.1 &\le 2 \sqrt{0} \\
-            0.1 &\le 0
+            |1.1 - 1| &\le 2 \sqrt{0.1^2 + 0.01^2} \\
+            0.1 &\le 2 \sqrt{.0101} \\
+            0.1 &\le .201
         \end{align*}
     \end{e}
-    \todo{fix the above equation}
 
     This considers the error in the measurement and the error in the expected value.
     The use of a DMM makes human error virtually nonexistent.
     In conclusion, the measured resistance is within the expected range, and the DMM is a reliable tool for measuring resistance.
 
-    \section{Voltage With Resistors in Series (Part 1A)}\label{sec:voltage}
+    \section{Measuring Voltage (Experiment 1A)}\label{sec:voltage}
 
     \subsection{Methods}\label{subsec:voltage_methods}
 
-    \todo{change following figure if this section is for part 1a the figure is wrong, it should have 2 10k ohms resistors}
     \begin{figure}[h]
         \begin{center}
             \begin{circuitikz}[american]
@@ -171,7 +149,7 @@
                 -- ++(0,3);
             \end{circuitikz}
         \end{center}
-        \caption {Abstract circuit configuration for measuring current. $R_2$ is the 1 $\Omega$ resistor which it is measured across.}
+        \caption {Abstract circuit configuration for measuring current. $R_1$ and $R_2$ are 1000 $\Omega$ resistors.}
         \label{fig:current_setup}
     \end{figure}
 
@@ -179,7 +157,7 @@
 
     \subsection{Conclusion}\label{subsec:voltage_conclusion}
 
-    \section{Measuring Current (Part 1B)}\label{sec:current}
+    \section{Measuring Current (Experiment 1B)}\label{sec:current}
 
     \subsection{Methods}\label{subsec:current_methods}
 
@@ -201,9 +179,16 @@
 
     \subsection{Conclusion}\label{subsec:current_conclusion}
 
-    \section{Ohmic and Non-Ohmic Behaviour}\label{sec:ohmic}
 
-    \subsection{Methods}\label{subsec:ohmic_methods}
+    \section{Ohmic Behavior (Experiment 2A)}\label{sec:current}
+
+    \subsection{Methods}\label{subsec:current_methods}
+
+    To verify Ohm's Law, we set up a circuit with a 10,000 $\Omega$ resistor.
+    The IOLab was used to provide a voltage to the circuit.
+    The DMM was used to measure the voltage across the resistor.
+    This can be seen in Figure~\ref{fig:ohmic_setup}.
+    The IOLab was set to provide a voltage ranging from 1 V to 3.3 V.
 
     \begin{figure}[h]
         \begin{annotatedFigure}
@@ -213,62 +198,111 @@
             \annotatedFigureBox{0.585,0.6934}{0.639,0.7834}{C}{0.585,0.6934}%bl
             \annotatedFigureBox{0.011,0.3155}{0.177,0.6714}{D}{0.011,0.3155}%bl
         \end{annotatedFigure}
-        \caption{The IOLab (A) provides a voltage that runs through the breadboard. On the board a 1 $\Omega$ resistor (B) and an LED (C) are connected. The ground is connected via banana cables that go through the DMM (D).}
+        \caption{The IOLab (A) provides a voltage that runs through the breadboard. On the board a 10 k$\Omega$ resistor (B) is in series. The ground is connected via banana cables that go through the DMM (D).}
         \label{fig:ohmic_setup}
     \end{figure}
-
-    To verify Ohm's Law, we set up a circuit with a 1 $\Omega$ resistor and an LED.
-    The IOLab was used to provide a voltage to the circuit.
-    The DMM was used to measure the voltage across the resistor.
-    This can be seen in Figure~\ref{fig:ohmic_setup}.
-    The IOLab was set to provide a voltage ranging from 1 V to 3.3 V.
-
+    
     First, we measured Ohmic behaviour.
     The DMM was set to measure voltage, and the banana cables were connected to the resistor.
     We recorded the voltage across the resistor as the voltage was increased.
     This resulted in the following data:
-
-    \begin{figure}[h]
+    
+    \begin{figure}[h!]
         \centering
-        \includegraphics[width=1.0\textwidth]{resources/images/em1_2a_VvsI}
-        \caption{Voltage and current data for the ohmic behaviour experiment.}
-        \label{fig:ohmic_data}
+        \begin{tabular}{|c|c|}
+            \hline
+            \text{Volts (V)} & \text{Amps (A)} \\
+            \hline
+            0 & 0 \\
+            0.3 & 0.00003 \\
+            0.6 & 0.00006 \\
+            1.0 & 0.00009 \\
+            1.3 & 0.00013 \\
+            1.6 & 0.00015 \\
+            1.9 & 0.00020 \\
+            2.2 & 0.00023 \\
+            2.5 & 0.00026 \\
+            2.8 & 0.00030 \\
+            3.1 & 0.00032 \\
+            \hline
+        \end{tabular}
+        \caption{Voltage and current data for the experiment.}
+        \label{fig: ohmic_data}
     \end{figure}
+
+
+    \subsection{Analysis}\label{subsec:current_analysis}
 
     The data shows a linear relationship between the voltage and the current, as expected.
+    
+    \subsection{Conclusion}\label{subsec:current_conclusion}
 
-    Next, we measured non-ohmic behaviour.
+
+
+
+    \section{Non-Ohmic Behavior (Experiment 2B)}\label{sec:current}
+
+    \subsection{Methods}\label{subsec:current_methods}
+
+    We measured ohmic behavior for 2 different LEDs, one green and one red.
     The LED was connected in series with a 1 k$\Omega$ resistor.
     We recorded the voltage across the LED as the DAC voltage was increased.
-    This resulted in the following data:
+    This resulted in the following data for the green LED:
     \begin{figure}[h!]
-        \begin{align*}
-            \begin{array}{|c|c|}
-                \hline
-                \text{Voltage (V)} & \text{Current (A)} \\
-                \hline
-                0.0 & 0.0 \\
-                0.3 & 0.01 \\
-                0.6 & 0.02 \\
-                1.0 & 0.03 \\
-                1.3 & 0.04 \\
-                1.6 & 0.05 \\
-                1.9 & 0.06 \\
-                2.2 & 0.07 \\
-                2.5 & 0.08 \\
-                2.8 & 0.09 \\
-                3.3 & 0.1 \\
-                \hline
-            \end{array}
-        \end{align*}
-        \caption{Voltage and current data for the non-ohmic behaviour experiment.}
-        \label{fig:non_ohmic_data}
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            \text{A7 (Input) Voltage (V)} & \text{A8 (After LED) Voltage (V)} & \text{Current (A)} \\
+            \hline
+            1.0 & 0 & 0 \\
+            1.3 & 0 & 0 \\
+            1.6 & 0.005 & 0.00001 \\
+            1.7 & 0.027 & 0.00003 \\
+            1.9 & 0.17 & 0.00017 \\
+            2.2 & 0.43 & 0.00043 \\
+            2.4 & 0.624 & 0.00063 \\
+            2.5 & 0.72 & 0.00072 \\
+            2.8 & 0.91 & 0.00091 \\
+            3.1 & 1.20 & 0.00121 \\
+            3.3 & 1.37 & 0.00138 \\
+            \hline
+        \end{tabular}
+        \caption{Voltage and current data for the green LED experiment.}
+        \label{fig:non_ohmic_data_green}
     \end{figure}
-    \todo{graph the non-ohmic data}
 
-    \subsection{Analysis}\label{subsec:ohmic_analysis}
+    We also got the following data for the red LED:
+    \begin{figure}[h!]
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            \text{A7 (Input) Voltage (V)} & \text{A8 (After LED) Voltage (V)} & \text{Current (A)} \\
+            \hline
+            0.8 & 0 & 0 \\
+            1.0 & 0 & 0 \\
+            1.3 & 0.004 & 0.000005 \\
+            1.6 & 0.027 & 0.000023 \\
+            1.8 & 0.18 & 0.00018 \\
+            2.1 & 0.50 & 0.00054 \\
+            2.3 & 0.799 & 0.0008 \\
+            2.5 & 0.98 & 0.001 \\
+            2.8 & 1.19 & 0.00123 \\
+            3.1 & 1.41 & 0.00140 \\
+            3.3 & 1.67 & 0.00165 \\
+            \hline
+        \end{tabular}
+        \caption{Voltage and current data for the red LED experiment.}
+        \label{fig:non_ohmic_data_red}
+    \end{figure}
 
-    \subsection{Conclusion}\label{subsec:ohmic_conclusion}
+    
+    \subsection{Analysis}\label{subsec:current_analysis}
+
+    \subsection{Conclusion}\label{subsec:current_conclusion}
+
+
+
+
 
     \section{Kirchhoff's Laws}\label{sec:kirchoff}
 
@@ -326,17 +360,17 @@
     which results in expected values for the currents of approximately:
 %    ['I1: 0.236 mA', 'I2: 0.231 mA', 'I3: 0.466 mA']
     \begin{align*}
-        I_{1exp} &= 0.236 \pm 0.1 \text{ A} \\
-        I_{2exp} &= 0.231 \pm 0.1 \text{ A} \\
-        I_{3exp} &= 0.466 \pm 0.1 \text{ A}
+        I_{1exp} &= 0.3 \pm 0.1 \text{ A} \\
+        I_{2exp} &= 0.3 \pm 0.1 \text{ A} \\
+        I_{3exp} &= 0.6 \pm 0.1 \text{ A}
     \end{align*}
     \todo{Propogate the error}
 
     With the DMM, we measured the currents to be:
     \begin{align*}
-        I_{1mea} &= 0.168 \pm 0.001 \text{ A} \\
-        I_{2mea} &= 0.156 \pm 0.001 \text{ A} \\
-        I_{3mea} &= 0.504 \pm 0.001 \text{ A}
+        I_{1mea} &= 0.236 \pm 0.001 \text{ A} \\
+        I_{2mea} &= 0.231 \pm 0.001 \text{ A} \\
+        I_{3mea} &= 0.466 \pm 0.001 \text{ A}
     \end{}
     \todo{Actually use the DMM to measure the currents}
 
