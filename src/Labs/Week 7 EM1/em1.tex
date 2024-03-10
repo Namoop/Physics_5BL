@@ -195,10 +195,14 @@
 
     \subsection{Conclusion}\label{subsec:voltage_conclusion}
 
+    We can see that a voltage divider circuit very evenly divides the voltage between two of the same resistors. Also, based on the results obtained from both the IOLab and the DMM measurements of the voltage difference across $R_1$, we can confidently conclude that both instruments yield consistent and reliable readings. The comparison tests conducted, along with the agreement test, demonstrate that the values obtained from the two instruments align well within the expeHowever, when evaluating voltage divider circuits, potential errors could stem from resistor tolerances, temperature fluctuations, and equipment accuracy.cted ranges, considering the uncertainties associated with the measurements. However, when evaluating voltage divider circuits, potential errors could stem from resistor tolerances, temperature fluctuations, and equipment accuracy.
+
     \section{Measuring Current (Experiment 1B)}\label{sec:current}
 
     \subsection{Methods}\label{subsec:current_methods}
 
+    Figure~\ref{fig:current_setup_1b} shows the setup used in this experiment, consisting of a battery 1 10,000 $\Omega$ resistor, and a 1 $\Omega$ resistor. We measured the current across $R_2$, which is the 1 $\Omega$ resistor, and compared it to the accepted value of 0.2 mA.
+    
     \begin{figure}[h]
         \begin{center}
             \begin{circuitikz}[american]
@@ -209,9 +213,11 @@
                 -- ++(0,3);
             \end{circuitikz}
         \end{center}
-        \caption {Abstract circuit configuration for measuring current. $R_2$ is the 1 $\Omega$ resistor which it is measured across.}
-        \label{fig:current_setup}
+        \caption {Abstract circuit configuration for measuring current. $R_2$ is the 1 $\Omega$ resistor which it is measured across. $R_2$ is a 10,000 $\Omega$ resistor.}
+        \label{fig:current_setup_1b}
     \end{figure}
+
+    We used both the IOLab and the DMM to measure the current. 
 
     \subsection{Analysis}\label{subsec:current_analysis}
 
