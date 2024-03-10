@@ -77,6 +77,11 @@
         \frac{1}{R_{\text{total}}} = \frac{1}{R_1} + \frac{1}{R_2} + \ldots
     \end{equation}
 
+    To find the transfer ratio, we can use the input and output voltages, seen below:
+    \begin{equation}\label{eq:transfer_ratio}
+        H = \frac{V_{\text{in}}}{V_{\text{out}}}
+    \end{equation}
+
     Finally, Kirchhoff's Laws are used to analyze complex circuits.
     The first law states that the sum of currents entering a junction is equal to the sum of currents leaving the junction.
     The second law states that the sum of the voltage drops around a closed loop is equal to the voltage supplied.
@@ -139,6 +144,8 @@
 
     \subsection{Methods}\label{subsec:voltage_methods}
 
+    Figure~\ref{fig:current_setup_1a} shows the setup used in this experiment, consisting of a battery and 2 10,000 $\Omega$ resistors. We measured the voltage at 2 different parts of the circuit - the initial voltage from the DAC and the voltage after $R_1$. We then found the transfer ratio H, found from equation~\ref{eq:transfer_ratio}.
+
     \begin{figure}[h]
         \begin{center}
             \begin{circuitikz}[american]
@@ -149,11 +156,37 @@
                 -- ++(0,3);
             \end{circuitikz}
         \end{center}
-        \caption {Abstract circuit configuration for measuring current. $R_1$ and $R_2$ are 1000 $\Omega$ resistors.}
-        \label{fig:current_setup}
+        \caption {Abstract circuit configuration for measuring current. $R_1$ and $R_2$ are 10,000 $\Omega$ resistors.}
+        \label{fig:current_setup_1a}
     \end{figure}
 
+    We used both the IOLab and the DMM to measure the voltage difference. We then compared them to see if they agreed.
+
     \subsection{Analysis}\label{subsec:voltage_analysis}
+
+    When we used the IOLab to measure the voltage difference across $R_1$, we got the following graph:
+    \todo{put in graph called Voltage over Time Part 1A1}
+
+    This graph shows the input (A7) volts and the output (A8) volts. When we take the time segment from 4 seconds to 8 seconds, and use equation~\ref{eq:transfer_ratio}, we find the Transfer Ratio (H): 0.5006 ± 7.218*10\^-5. We can use a comparison test, using 1\% as the uncertainty for resistors greater than 1 ohm. The error for the transfer ratio is the error for \( V \), which is 0.01.
+    
+    The agreement test, from Equation~\ref{eq:agreement_test}, shows that the measured value is within the expected range.
+    \begin{e}
+        \begin{align*}
+            |0.5 - 0.5006| &\le 2 \sqrt{0.01^2 + 0.00007218^2} \\
+            0.0006 &\le 2 \sqrt{.0001} \\
+            0.0006 &\le 0.02
+        \end{align*}
+
+    When we used the DMM to measure the voltage difference across $R_1$, we got a value of 1.0 V. We can use a comparison test, using 1\% as the uncertainty for resistors greater than 1 ohm. We can use the average value from the A8 voltage meter of 1.005 V to compare to the DMM value.
+    
+    The agreement test, from Equation~\ref{eq:agreement_test}, shows that the DMM and IOLab values agree.
+    \begin{e}
+        \begin{align*}
+            |1.005 - 1| &\le 2 \sqrt{0.01^2 + 0.01^2} \\
+            0.0006 &\le 2 \sqrt{.0002} \\
+            0.0006 &\le 0.0282
+        \end{align*}
+    \end{e}
 
     \subsection{Conclusion}\label{subsec:voltage_conclusion}
 
