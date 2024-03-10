@@ -195,7 +195,7 @@
 
     \subsection{Conclusion}\label{subsec:voltage_conclusion}
 
-    We can see that a voltage divider circuit very evenly divides the voltage between two of the same resistors. Also, based on the results obtained from both the IOLab and the DMM measurements of the voltage difference across $R_1$, we can confidently conclude that both instruments yield consistent and reliable readings. The comparison tests conducted, along with the agreement test, demonstrate that the values obtained from the two instruments align well within the expeHowever, when evaluating voltage divider circuits, potential errors could stem from resistor tolerances, temperature fluctuations, and equipment accuracy.cted ranges, considering the uncertainties associated with the measurements. However, when evaluating voltage divider circuits, potential errors could stem from resistor tolerances, temperature fluctuations, and equipment accuracy.
+    We can see that a voltage divider circuit very evenly divides the voltage between two of the same resistors. Also, based on the results obtained from both the IOLab and the DMM measurements of the voltage difference across $R_1$, we can confidently conclude that both instruments yield consistent and reliable readings. The comparison tests conducted, along with the agreement test, demonstrate that the values obtained from the two instruments align well with the experiment. However, when evaluating voltage divider circuits, potential errors could stem from resistor tolerances, temperature fluctuations, and equipment accuracy.
 
     \section{Measuring Current (Experiment 1B)}\label{sec:current}
 
@@ -221,8 +221,24 @@
 
     \subsection{Analysis}\label{subsec:current_analysis}
 
+    When we used the IOLab to measure the current, we got the following graph:
+    \todo{put in graph called A7 volts (Voltage) over Time Part 1B1}
+
+    This graph shows the input (A7) volts and the current. When we take the time segment from 2.5 seconds to 6 seconds, we find the average current to be 0.2294 +- 1.189e-05. We can use a comparison test, using 1\% as the uncertainty for resistors greater than 1 ohm.
+    
+    The agreement test, from Equation~\ref{eq:agreement_test}, shows that the measured value is not within the expected range.
+    \begin{e}
+        \begin{align*}
+            |0.2294 - 0.2| &\ge 2 \sqrt{0.01^2 + 0.00001189^2} \\
+            0.0294 &\ge 2 \sqrt{.0001} \\
+            0.0294 &\ge 0.02
+        \end{align*}
+
+    When we used the DMM to measure the current, we got a value of 0.2 mA. This is the same as the accepted value. We can see that the IOLab has a higher sensitivity due to it having more decimals as well as being more off from the accepted value, suggesting it picked up unaccounted for error.
+
     \subsection{Conclusion}\label{subsec:current_conclusion}
 
+    When employing the IOLab, our analysis revealed an average current of 0.2294 mA over a specific time interval, with a small uncertainty. However, upon conducting comparison and agreement tests, we found that the measured value deviated significantly from the expected range, indicating potential errors. Conversely, the DMM measurement yielded a value matching the accepted one. The discrepancy between the IOLab and DMM readings highlights differences in sensitivity and potential sources of error. The IOLab's higher sensitivity, evident from its more precise measurement, might have led to the detection of unaccounted-for errors, resulting in the observed deviation. Conversely, the DMM, with its standard measurement accuracy, provided a value consistent with expectations. Possible errors in the current measurement experiment include variations in resistor tolerances, temperature effects on resistance, differences in instrument calibration, potential measurement technique inaccuracies, sampling interval limitations, and human errors in experiment setup or data recording. These factors could have contributed to the observed discrepancies between the IOLab and DMM measurements.
 
     \section{Ohmic Behavior (Experiment 2A)}\label{sec:ohmic}
 
