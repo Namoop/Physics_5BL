@@ -324,19 +324,17 @@
         \label{fig:kirchoff_setup}
     \end{figure}
 
-    For this experiment, we set up a circuit with three resistors.
-    The goal was the measure the current before and after Junction $A$.
+    For this experiment, we set up a circuit with three resistors, $R_1$, $R_2$, and $R_3$, measuring 4.7k, 10k, and 4.7k $\Omega$, respectively.
+    The goal was to measure the current before and after Junction $A$.
     To measure the current, we placed 1 $\Omega$ resistors before and after the junction.
     This can be seen in Figure~\ref{fig:kirchoff_setup}.
     We then used the DMM to measure the voltage across the resistors.
     The 1 $\Omega$ resistors added a negligible amount of resistance to the circuit, allowing them to act as ammeters.
 
-    \todo{Add the kirchhoff setup figure}
-
     \subsection{Analysis}\label{subsec:kirchoff_analysis}
 
     Given figure~\ref{fig:kirchoff_setup}, we can use Kirchhoff's Laws to analyze the expected currents in the circuit.
-    Taking $I_1$ as the initial current from the DAC, $I_2$ as the current after the batteries, and $I_3$ as the current after the resistor $R_3$, we can use the following equations:
+    Taking $I_1$ as the initial current from the DAC ($V_1$) flowing into $R_1$, $I_2$ as the current after the batterie ($V_2$) flowing into $R_2$, and $I_3$ as the current after the resistor $R_3$, we can use the following equations:
     \begin{align*}
         Loop~1: V_1 - I_1 R_1 - I_2 R_2 &= 0 \\
         Loop~2: V_2 - I_2 R_2 - I_3 R_3 &= 0 \\
@@ -357,32 +355,31 @@
         R_2 &= 10k \pm 0.1k \text{ $\Omega$} \\
         R_1 &= 4.7k \pm 0.1k \text{ $\Omega$}
     \end{align*}
-    which results in expected values for the currents of approximately:
+    which results in expected values for the currents of:
 %    ['I1: 0.236 mA', 'I2: 0.231 mA', 'I3: 0.466 mA']
     \begin{align*}
-        I_{1exp} &= 0.3 \pm 0.1 \text{ A} \\
-        I_{2exp} &= 0.3 \pm 0.1 \text{ A} \\
-        I_{3exp} &= 0.6 \pm 0.1 \text{ A}
+        I_{1exp} &= 0.236 \pm 0.01 \text{mA} \\
+        I_{2exp} &= 0.231 \pm 0.01 \text{mA} \\
+        I_{3exp} &= 0.466 \pm 0.01 \text{mA}
     \end{align*}
-    \todo{Propogate the error}
 
     With the DMM, we measured the currents to be:
     \begin{align*}
-        I_{1mea} &= 0.236 \pm 0.001 \text{ A} \\
-        I_{2mea} &= 0.231 \pm 0.001 \text{ A} \\
-        I_{3mea} &= 0.466 \pm 0.001 \text{ A}
+        I_{1mea} &= 0.168 \pm 0.001 \text{mA} \\
+        I_{2mea} &= 0.156 \pm 0.001 \text{mA} \\
+        I_{3mea} &= 0.504 \pm 0.001 \text{mA}
     \end{}
-    \todo{Actually use the DMM to measure the currents}
 
-    The agreement test, from Equation~\ref{eq:agreement_test}, shows that the measured values are within the expected range.
+    The agreement test, from Equation~\ref{eq:agreement_test}, shows that the measured values are not within the expected range.
     \begin{e}
         \begin{align*}
-            |0.236 - 0.3| &\le 2 \sqrt{0.001^2 - 0.1^2} \\
-            0.064 &\le 2 \sqrt{0} \\
-            0.064 &\le 0
+            |0.504 - 0.466| &\ge 2 \sqrt{0.001^2 - 0.01^2} \\
+            0.038 &\ge 2 \sqrt{.0001} \\
+            0.038 &\ge 0.0201
         \end{align*}
     \end{e}
-    \todo{Fix the above equation (filled in by copilot)}
+
+    We also found that our data did not obey Kirchoffs Junction rule, as we can clearly see that $I_1$ + $I_2$ does not equal $I_3$. This means our data was off significantly and we should not expect it to be within an acceptable range.
 
     \subsection{Conclusion}\label{subsec:kirchoff_conclusion}
 
