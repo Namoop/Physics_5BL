@@ -184,13 +184,13 @@
     \subsection{Analysis}\label{subsec:voltage_analysis}
 
     When we used the IOLab to measure the voltage difference across $R_1$, we got the graph in figure~\ref{fig:voltage_graph_1a1}.
-    \begin{f}[h!]
+    \begin{figure}[h!]
         \begin{center}
             \includegraphics[width=1.0\linewidth]{resources/images/part1a1_voltage_over_time}
         \end{center}
         \caption{Graph of the voltage difference across $R_1$.}
         \label{fig:voltage_graph_1a1}
-    \end{f}
+    \end{figure}
 
     This graph shows the input (A7) volts and the output (A8) volts.
     When we take the time segment from 4 seconds to 8 seconds, and use equation~\ref{eq:transfer_ratio}, we find the Transfer Ratio $(H): 0.5006 \pm 7.218 * 10^-5$.
@@ -254,13 +254,13 @@
     \subsection{Analysis}\label{subsec:current_analysis}
 
     When we used the IOLab to measure the current, we got graph in figure~\ref{fig:current_graph_1b1}.
-    \begin{f}[h!]
+    \begin{figure}[h!]
         \begin{center}
             \includegraphics[width=1.0\linewidth]{resources/images/part1b1_voltage_over_time}
         \end{center}
         \caption{Graph of the voltage difference across $R_2$.}
         \label{fig:current_graph_1b1}
-    \end{f}
+    \end{figure}
 
     This graph shows the input (A7) volts and the current.
     When we take the time segment from 2.5 seconds to 6 seconds, we find the average current to be 0.2294 +- 1.189e-05.
@@ -322,6 +322,10 @@
     The LED was connected in series with a 1 k$\Omega$ resistor.
     We recorded the voltage across the LED as the DAC voltage was increased.
     This resulted in the green LED data shown in Figure~\ref{fig:non_ohmic_data_green} and the red LED data shown in Figure~\ref{fig:non_ohmic_data_red}.
+
+    The residuals for the ohmic behavior can be seen in Figure~\ref{fig:ohmic_residuals}.
+    The residuals for the LEDs can be seen in Figure~\ref{fig:non_ohmic_residuals_green} and Figure~\ref{fig:non_ohmic_residuals_red}.
+    Each show that the data is random and does not have a pattern, implying that the linear model is a good fit for the data.
 
     \subsection{Analysis}\label{subsec:ohmic_analysis}
 
@@ -534,6 +538,27 @@
 
     \begin{figure}[h!]
         \centering
+        \includegraphics[width=1.0\linewidth]{resources/images/2a_residuals}
+        \caption{Residuals for the ohmic behavior data.}
+        \label{fig:ohmic_residuals}
+    \end{figure}
+
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=1.0\linewidth]{resources/images/2b2_residuals}
+        \caption{Residuals for the green LED behavior data.}
+        \label{fig:non_ohmic_residuals_green}
+    \end{figure}
+
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=1.0\linewidth]{resources/images/2b3_residuals}
+        \caption{Residuals for the non-ohmic behavior data for the red LED.}
+        \label{fig:non_ohmic_residuals_red}
+    \end{figure}
+
+    \begin{figure}[h!]
+        \centering
         \begin{tabular}{|c|c|}
             \hline
             \text{Volts (V)} & \text{Amps (A)} \\
@@ -551,7 +576,7 @@
             3.1 & 0.00032 \\
             \hline
         \end{tabular}
-        \caption{Voltage and current data for the experiment.}
+        \caption{Voltage and current data for the ohmic experiment.}
         \label{fig:ohmic_data}
     \end{figure}
 
