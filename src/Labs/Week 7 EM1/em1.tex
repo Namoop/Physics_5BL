@@ -406,20 +406,24 @@
 
 
     The data for the non-ohmic behavior can be seen in Figure~\ref{fig:non_ohmic_data_green} and Figure~\ref{fig:non_ohmic_data_red}.
-    When graphed, it shows a non-linear relationship between voltage and current, as seen in Figure~\ref{fig:non_ohmic_graph}.
+    When graphed, it shows a linear relationship between voltage and current, as seen in Figure~\ref{fig:non_ohmic_graph}.
     \begin{figure}[h!]
         \centering
         \includegraphics[width=1.0\linewidth]{resources/images/part2_non_ohmic_graph}
         \caption{Graph of the non-ohmic behavior data. \todo{error bars}}
         \label{fig:non_ohmic_graph}
     \end{figure}
-    The red LED data shows similar non-linear relationship between voltage and current, as seen in Figure~\ref{fig:non_ohmic_graph_red}.
+    The red LED data shows similar relationship between voltage and current, as seen in Figure~\ref{fig:non_ohmic_graph_red}.
     \begin{figure}[h!]
         \centering
         \includegraphics[width=1.0\linewidth]{resources/images/part2_non_ohmic_data_red}
         \caption{Graph of the non-ohmic behavior data for the red LED. \todo{error bars}}
         \label{fig:non_ohmic_graph_red}
     \end{figure}
+
+    The non-ohmic behavior is from the LED acting like a wall until a minimum voltage is met, then acting like a wire.
+    This is why it makes sense that the data is linear after a certain point.
+    Measurements before the minimum voltage were unsuccessful, as the LED was using all the provided voltage, so the current was 0 by equation~\ref{eq:resistance_equation}.
 
     The resistance can again be found using equation~\ref{eq:resistance_equation}.
     This calculation results in a resistance of $996.50 \pm 2.56 \Omega$ for the green LED and $989.35 \pm 10.81 \Omega$ for the red LED\@.
