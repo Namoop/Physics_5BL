@@ -43,17 +43,28 @@
     \section*{Introduction}\label{sec:introduction}
     \addcontentsline{toc}{section}{Introduction}
 
-    This report will cover the Ohm's Law lab. We will be employing tools such as the Digital Multimeter (DMM) and the IOLab apparatus. Through measurements of resistance, current, and voltage, we will measure Ohmic and non-Ohmic behaviors in circuit elements, distinguishing between components that adhere to Ohm's Law and those that exhibit nonlinear characteristics.
+    This report will cover the Ohm's Law lab.
+    We will be employing tools such as the Digital Multimeter (DMM) and the IOLab apparatus.
+    Through measurements of resistance, current, and voltage, we will measure Ohmic and non-Ohmic behaviors in circuit elements, distinguishing between components that adhere to Ohm's Law and those that exhibit nonlinear characteristics.
 
-    In addition, the lab will incorporate the application of Kirchhoff's Circuit Rules, which are used for analyzing circuit configurations. By employing the Junction Rule and Loop Rule, we can gain insight into the conservation of charge and energy within electrical circuits.
+    In addition, the lab will incorporate the application of Kirchhoff's Circuit Rules, which are used for analyzing circuit configurations.
+    By employing the Junction Rule and Loop Rule, we can gain insight into the conservation of charge and energy within electrical circuits.
 
     For experiment 0, we simply measured the resistance of a 1 $\Omega$ resistor, however, we found that our measurement was outside the expected range of values using .01 $\Omega$ as the error in the resistors measurement. 
 
-    For experiment 1A, we first measured the transfer ratio (H ≡ Vout/Vin) of a circuit with 2 1000 $\Omega$ resistors in it, which we found to be .5005, inside the range of error for the accepted value of 0.5. we then used the DMM to measure voltage, comparing this to our voltage from the previous part, and finding that they both agreed with each other. For experiment 1B, we created a circuit with a 10,000 $\Omega$ resistor in it and measured the current using both the IOLab and the DMM. Our measured current from the IOLab was 0.229 mA, slightly out of the range of the accepted value of 0.2 mA. However, when using the DMM, we measured exactly 0.2 mA. We then determined the IOLab had higher sensitivity due to the large amount of decimals it gave and its high error from the expected value.
+    For experiment 1A, we first measured the transfer ratio $(H \equiv V_{out} /V_{in})$ of a circuit with two 1000 $\Omega$ resistors in it, which we found to be .5005, inside the range of error for the accepted value of 0.5. we then used the DMM to measure voltage, comparing this to our voltage from the previous part, and finding that they both agreed with each other. For experiment 1B, we created a circuit with a 10,000 $\Omega$ resistor in it and measured the current using both the IOLab and the DMM. Our measured current from the IOLab was 0.229 mA, slightly out of the range of the accepted value of 0.2 mA. However, when using the DMM, we measured exactly 0.2 mA. We then determined the IOLab had higher sensitivity due to the large amount of decimals it gave and its high error from the expected value.
 
-    For experiment 2A, we first measured the current across a 10,000 $\Omega$ resistor to measure ohmic behavior. We used 10 different input voltages and found that it obeyed ohms law. We then calculated the resistance of the resistor to be 9379.79 ± 233.97 Ω, which is slightly out of range of the accepted value. For experiment 2B, we measured the voltage across 2 LEDs to test for ohmic behavior. We used a 1000 $\Omega$ resistor in series to limit current and again took 10 data points for each LED. We found that both green and red LEDs did not obey ohms law, as they both needed a minimum voltage difference in order to let current through, then acted like wires. We also found the resistance of the resistor to be 996.50 ± 2.56 Ω when using the green LED and 989.35 ± 10.81 Ω when using the red LED, which were both inside the acceptable range of values. This is because the LED acted like a wire once the minimum voltage was met, so it allowed us to properly measure resistance.
+    For experiment 2A, we first measured the current across a 10,000 $\Omega$ resistor to measure ohmic behavior.
+    We used 10 different input voltages and found that it obeyed Ohm's law.
+    We then calculated the resistance of the resistor to be $9379.79 \pm 233.97 \Omega$, which is slightly out of range of the accepted value.
+    For experiment 2B, we measured the voltage across two LEDs to test for ohmic behavior.
+    We used a 1000 $\Omega$ resistor in series to limit current and again took 10 data points for each LED\@.
+    We found that both green and red LEDs did not obey Ohm's law, as they both needed a minimum voltage difference to let current through, then acted like wires.
+    We also found the resistance of the resistor to be $996.50 \pm 2.56 \Omega$ when using the green LED and $989.35 \pm 10.81 \Omega$ when using the red LED, which were both inside the acceptable range of values.
+    This is because the LED acted like a wire once the minimum voltage was met, so it allowed us to properly measure resistance.
 
-    For experiment 3, we measured the current across different resistors in a circuit involving multiple batteries and resistors. Our data did not match the predicted values and we could not verify Kirchhoffs junction rule equation.
+    For experiment 3, we measured the current across different resistors in a circuit involving multiple batteries and resistors.
+    Our data did not match the predicted values, and we could not verify Kirchhoff's junction rule equation.
     
     \section*{Theory}\label{sec:theory}
     Ohm's law states that the current through a conductor between two points is directly proportional to the voltage across the two points.
@@ -62,13 +73,13 @@
         V = I \cdot R
     \end{equation}
     where $V$ is the voltage, $I$ is the current, and $R$ is the resistance.
-    Such a relationship is linear and is known as ohmic behaviour.
+    Such a relationship is linear and is known as ohmic behavior.
     To find the resistance of a material, we can use the equation
     \begin{equation}\label{eq:resistance_equation}
         R = \frac{V}{I}
     \end{equation}
 
-    As covered in the report overview, resistors in series can be summed, such as
+    As covered in the report overview, resistors in series can be summed up, such as
     \begin{equation}\label{eq:resistors_in_series}
         R_{\text{total}} = R_1 + R_2 + \ldots
     \end{equation}
@@ -144,7 +155,9 @@
 
     \subsection{Methods}\label{subsec:voltage_methods}
 
-    Figure~\ref{fig:current_setup_1a} shows the setup used in this experiment, consisting of a battery and 2 10,000 $\Omega$ resistors. We measured the voltage at 2 different parts of the circuit - the initial voltage from the DAC and the voltage after $R_1$. We then found the transfer ratio H, found from equation~\ref{eq:transfer_ratio}.
+    Figure~\ref{fig:current_setup_1a} shows the setup used in this experiment, consisting of a battery and two 10,000 $\Omega$ resistors.
+    We measured the voltage at two different parts of the circuit—the initial voltage from the DAC and the voltage after $R_1$.
+    We then found the transfer ratio H, found from equation~\ref{eq:transfer_ratio}.
 
     \begin{figure}[h]
         \begin{center}
@@ -160,14 +173,18 @@
         \label{fig:current_setup_1a}
     \end{figure}
 
-    We used both the IOLab and the DMM to measure the voltage difference. We then compared them to see if they agreed.
+    We used both the IOLab and the DMM to measure the voltage difference.
+    We then compared them to see if they agreed.
 
     \subsection{Analysis}\label{subsec:voltage_analysis}
 
     When we used the IOLab to measure the voltage difference across $R_1$, we got the following graph:
     \todo{put in graph called Voltage over Time Part 1A1}
 
-    This graph shows the input (A7) volts and the output (A8) volts. When we take the time segment from 4 seconds to 8 seconds, and use equation~\ref{eq:transfer_ratio}, we find the Transfer Ratio (H): 0.5006 ± 7.218*10\^-5. We can use a comparison test, using 1\% as the uncertainty for resistors greater than 1 ohm. The error for the transfer ratio is the error for \( V \), which is 0.01.
+    This graph shows the input (A7) volts and the output (A8) volts.
+    When we take the time segment from 4 seconds to 8 seconds, and use equation~\ref{eq:transfer_ratio}, we find the Transfer Ratio (H): 0.5006 ± 7.218*10\^-5.
+    We can use a comparison test, using 1\% as the uncertainty for resistors greater than 1 $\Omega$.
+    The error for the transfer ratio is the error for $V$, which is 0.01.
     
     The agreement test, from Equation~\ref{eq:agreement_test}, shows that the measured value is within the expected range.
     \begin{e}
@@ -176,8 +193,11 @@
             0.0006 &\le 2 \sqrt{.0001} \\
             0.0006 &\le 0.02
         \end{align*}
+    \end{e}
 
-    When we used the DMM to measure the voltage difference across $R_1$, we got a value of 1.0 V. We can use a comparison test, using 1\% as the uncertainty for resistors greater than 1 ohm. We can use the average value from the A8 voltage meter of 1.005 V to compare to the DMM value.
+    When we used the DMM to measure the voltage difference across $R_1$, we got a value of 1.0 V. We can use a
+    comparison test, using 1\% as the uncertainty for resistors greater than 1 $\Omega$.
+    We can use the average value from the A8 voltage meter of 1.005 V to compare to the DMM value.
     
     The agreement test, from Equation~\ref{eq:agreement_test}, shows that the DMM and IOLab values agree.
     \begin{e}
@@ -190,14 +210,18 @@
 
     \subsection{Conclusion}\label{subsec:voltage_conclusion}
 
-    We can see that a voltage divider circuit very evenly divides the voltage between two of the same resistors. Also, based on the results obtained from both the IOLab and the DMM measurements of the voltage difference across $R_1$, we can confidently conclude that both instruments yield consistent and reliable readings. The comparison tests conducted, along with the agreement test, demonstrate that the values obtained from the two instruments align well with the experiment. However, when evaluating voltage divider circuits, potential errors could stem from resistor tolerances, temperature fluctuations, and equipment accuracy.
+    We can see that a voltage divider circuit very evenly divides the voltage between two of the same resistors.
+    Also, based on the results obtained from both the IOLab and the DMM measurements of the voltage difference across $R_1$, we can confidently conclude that both instruments yield consistent and reliable readings.
+    The comparison tests conducted, along with the agreement test, demonstrate that the values obtained from the two instruments align well with the experiment.
+    However, when evaluating voltage divider circuits, potential errors could stem from resistor tolerances, temperature fluctuations, and equipment accuracy.
 
     \section{Measuring Current (Experiment 1B)}\label{sec:current}
 
     \subsection{Methods}\label{subsec:current_methods}
 
-    Figure~\ref{fig:current_setup_1b} shows the setup used in this experiment, consisting of a battery 1 10,000 $\Omega$ resistor, and a 1 $\Omega$ resistor. We measured the current across $R_2$, which is the 1 $\Omega$ resistor, and compared it to the accepted value of 0.2 mA.
-    
+    Figure~\ref{fig:current_setup_1b} shows the setup used in this experiment, consisting of a battery, a 10,000 $\Omega$ resistor, and a 1 $\Omega$ resistor.
+    We measured the current across $R_2$, which is the 1 $\Omega$ resistor, and compared it to the accepted value of 0.2 mA\@.
+
     \begin{figure}[h]
         \begin{center}
             \begin{circuitikz}[american]
@@ -212,15 +236,17 @@
         \label{fig:current_setup_1b}
     \end{figure}
 
-    We used both the IOLab and the DMM to measure the current. 
+    We used both the IOLab and the DMM to measure the current.
 
     \subsection{Analysis}\label{subsec:current_analysis}
 
     When we used the IOLab to measure the current, we got the following graph:
     \todo{put in graph called A7 volts (Voltage) over Time Part 1B1}
 
-    This graph shows the input (A7) volts and the current. When we take the time segment from 2.5 seconds to 6 seconds, we find the average current to be 0.2294 +- 1.189e-05. We can use a comparison test, using 1\% as the uncertainty for resistors greater than 1 ohm.
-    
+    This graph shows the input (A7) volts and the current.
+    When we take the time segment from 2.5 seconds to 6 seconds, we find the average current to be 0.2294 +- 1.189e-05.
+    We can use a comparison test, using 1\% as the uncertainty for resistors greater than 1 ohm.
+
     The agreement test, from Equation~\ref{eq:agreement_test}, shows that the measured value is not within the expected range.
     \begin{e}
         \begin{align*}
@@ -228,14 +254,24 @@
             0.0294 &\ge 2 \sqrt{.0001} \\
             0.0294 &\ge 0.02
         \end{align*}
+    \end{e}
 
-    When we used the DMM to measure the current, we got a value of 0.2 mA. This is the same as the accepted value. We can see that the IOLab has a higher sensitivity due to it having more decimals as well as being more off from the accepted value, suggesting it picked up unaccounted for error.
+    When we used the DMM to measure the current, we got a value of 0.2 mA. This is the same as the accepted value.
+    We can see that the IOLab has a higher sensitivity due to it having more decimals as well as being more off from the accepted value, suggesting it picked up unaccounted for error.
 
     \subsection{Conclusion}\label{subsec:current_conclusion}
 
-    When using the IOLab, our analysis revealed an average current of 0.2294 mA over a specific time interval, with a small uncertainty. However, upon conducting comparison and agreement tests, we found that the measured value deviated significantly from the expected range, indicating potential errors. Conversely, the DMM measurement yielded a value matching the accepted one. The discrepancy between the IOLab and DMM readings highlights differences in sensitivity and potential sources of error. The IOLab's higher sensitivity, evident from its more precise measurement, might have led to the detection of unaccounted-for errors, resulting in the observed deviation. Conversely, the DMM, with its standard measurement accuracy, provided a value consistent with expectations. Possible errors in the current measurement experiment include variations in resistor tolerances, temperature effects on resistance, differences in instrument calibration, potential measurement technique inaccuracies, sampling interval limitations, and human errors in experiment setup or data recording. These factors could have contributed to the observed discrepancies between the IOLab and DMM measurements.
+    When using the IOLab, our analysis revealed an average current of 0.2294 mA over a specific time interval, with a small uncertainty.
+    However, upon conducting comparison and agreement tests, we found that the measured value deviated significantly from the expected range, indicating potential errors.
+    Conversely, the DMM measurement yielded a value matching the accepted one.
+    The discrepancy between the IOLab and DMM readings highlights differences in sensitivity and potential sources of error.
+    The IOLab's higher sensitivity, evident from its more precise measurement, might have led to the detection of unaccounted-for errors, resulting in the observed deviation.
+    Conversely, the DMM, with its standard measurement accuracy, provided a value consistent with expectations.
+    Possible errors in the current measurement experiment include variations in resistor tolerances, temperature effects on resistance, differences in instrument calibration, potential measurement technique inaccuracies, sampling interval limitations, and human errors in experiment setup or data recording.
+    These factors could have contributed to the observed discrepancies between the IOLab and DMM measurements.
 
-    \section{Ohmic Behavior (Experiment 2A)}\label{sec:ohmic}
+
+    \section{Ohmic and Non-Ohmic Behavior (Experiment 2)}\label{sec:ohmic}
 
     \subsection{Methods}\label{subsec:ohmic_methods}
 
@@ -243,7 +279,7 @@
     The IOLab was used to provide a voltage to the circuit.
     The DMM was used to measure the voltage across the resistor.
     This can be seen in Figure~\ref{fig:ohmic_setup}.
-    The IOLab was set to provide a voltage ranging from 1 V to 3.3 V.
+    The IOLab was set to provide a voltage ranging from 1 V to 3.3 V\@.
 
     \begin{figure}[h]
         \begin{annotatedFigure}
@@ -257,11 +293,10 @@
         \label{fig:ohmic_setup}
     \end{figure}
     
-    First, we measured Ohmic behaviour.
+    First, we measured Ohmic behavior.
     The DMM was set to measure voltage, and the banana cables were connected to the resistor.
     We recorded the voltage across the resistor as the voltage was increased.
-    This resulted in the following data:
-    
+    This resulted in the data shown in Figure~\ref{fig:ohmic_data}.
     \begin{figure}[h!]
         \centering
         \begin{tabular}{|c|c|}
@@ -282,27 +317,15 @@
             \hline
         \end{tabular}
         \caption{Voltage and current data for the experiment.}
-        \label{fig: ohmic_data}
+        \label{fig:ohmic_data}
     \end{figure}
+    \todo{move tables to appendix}
+    \todo{add error to table}
 
-
-    \subsection{Analysis}\label{subsec:ohmic_analysis}
-
-    The data shows a linear relationship between the voltage and the current, as expected.
-    
-    \subsection{Conclusion}\label{subsec:ohmic_conclusion}
-
-
-
-
-    \section{Non-Ohmic Behavior (Experiment 2B)}\label{sec:nonohmic}
-
-    \subsection{Methods}\label{subsec:nonohmic_methods}
-
-    We measured ohmic behavior for 2 different LEDs, one green and one red.
+    We measured non-ohmic behavior for two different LEDs, one green and one red.
     The LED was connected in series with a 1 k$\Omega$ resistor.
     We recorded the voltage across the LED as the DAC voltage was increased.
-    This resulted in the following data for the green LED:
+    This resulted in the green LED data shown in Figure~\ref{fig:non_ohmic_data_green} and the red LED data shown in Figure~\ref{fig:non_ohmic_data_red}.
     \begin{figure}[h!]
         \centering
         \begin{tabular}{|c|c|c|}
@@ -326,7 +349,6 @@
         \label{fig:non_ohmic_data_green}
     \end{figure}
 
-    We also got the following data for the red LED:
     \begin{figure}[h!]
         \centering
         \begin{tabular}{|c|c|c|}
@@ -350,13 +372,98 @@
         \label{fig:non_ohmic_data_red}
     \end{figure}
 
+    \subsection{Analysis}\label{subsec:ohmic_analysis}
+
+    The data for the ohmic behavior can be seen in Figure~\ref{fig:ohmic_data}.
+    When graphed, it shows a linear relationship between voltage and current, as seen in Figure~\ref{fig:ohmic_graph}.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=1.0\linewidth]{resources/images/part2a_ohmic_graph}
+        \caption{Graph of the ohmic behavior data. \todo{error bars}}
+        \label{fig:ohmic_graph}
+    \end{figure}
+
+    Using equation~\ref{eq:resistance_equation}, we can find the resistance of the resistor.
+    \begin{e}
+        \begin{align*}
+            R &= \frac{V}{I} \\
+            R &= \frac{3.3}{0.00032} \\
+            R &= 9379.79 \pm 233.97 \Omega
+        \end{align*}
+    \end{e}
+    This ends up differing from the accepted value of 10,000 $\Omega$.
+    We can use an agreement test from equation~\ref{eq:agreement_test}, using 1\% as the uncertainty for resistors
+    greater than 1 $\Omega$.
+    The error for the resistance is the error for $V$, that is 0.01.
+    \begin{e}
+        \begin{align*}
+            |9379.79 - 10000| &\le 2 \sqrt{0.01^2 + 233.97^2} \\
+            620.21 &\le 2 \sqrt{54744.0001} \\
+            620.21 &\le 466.5
+        \end{align*}
+    \end{e}
+    The agreement test shows that the measured value is not within the expected range.
+
+
+    The data for the non-ohmic behavior can be seen in Figure~\ref{fig:non_ohmic_data_green} and Figure~\ref{fig:non_ohmic_data_red}.
+    When graphed, it shows a non-linear relationship between voltage and current, as seen in Figure~\ref{fig:non_ohmic_graph}.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=1.0\linewidth]{resources/images/part2_non_ohmic_graph}
+        \caption{Graph of the non-ohmic behavior data. \todo{error bars}}
+        \label{fig:non_ohmic_graph}
+    \end{figure}
+    The red LED data shows similar non-linear relationship between voltage and current, as seen in Figure~\ref{fig:non_ohmic_graph_red}.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=1.0\linewidth]{resources/images/part2_non_ohmic_data_red}
+        \caption{Graph of the non-ohmic behavior data for the red LED. \todo{error bars}}
+        \label{fig:non_ohmic_graph_red}
+    \end{figure}
+
+    The resistance can again be found using equation~\ref{eq:resistance_equation}.
+    This calculation results in a resistance of $996.50 \pm 2.56 \Omega$ for the green LED and $989.35 \pm 10.81 \Omega$ for the red LED\@.
+    \begin{e}
+        \begin{align*}
+            R &= \frac{V}{I} \\
+            R_{green} &= 996.50 \pm2.56 \Omega \\
+            R_{red} &= 989.35 \pm10.81 \Omega
+        \end{align*}
+    \end{e}
+
+    These results mean that the green LED and red LED both acted like wires once the minimum voltage was met, so it
+    allowed us to properly measure resistance.
+    We can use an agreement test from equation~\ref{eq:agreement_test}, using 1\% as the uncertainty for resistors:
+    \begin{e}
+        \begin{align*}
+            |996.50 - 1000| &\le 2 \sqrt{0.01^2 + 2.56^2} \\
+            3.5 &\le 2 \sqrt{6.5156} \\
+            3.5 &\le 5.1 \\
+            |989.35 - 1000| &\le 2 \sqrt{0.01^2 + 10.81^2} \\
+            10.65 &\le 2 \sqrt{116.6561} \\
+            10.65 &\le 21.6
+        \end{align*}
+    \end{e}
+    The agreement test shows that the measured value is within the expected range.
+
+    The chi-squared test for the green LED is 0.0001, and for the red LED is 0.0002.
+    This means that the green LED is a better fit to the linear model than the red LED\@.
+    However, both values are very close to 0 and too small, meaning that neither linear model is a good fit for the LEDs.
+    This is likely because the data did not vary enough to provide a larger chi-squared value.
+
     
-    \subsection{Analysis}\label{subsec:nonohmic_analysis}
+    \subsection{Conclusion}\label{subsec:ohmic_conclusion}
 
-    \subsection{Conclusion}\label{subsec:nonohmic_conclusion}
+    The data for the ohmic behavior shows a linear relationship between voltage and current, as seen in Figure~\ref{fig:ohmic_graph}.
+    However, the resistance of the resistor was found to be $9379.79 \pm 233.97 \Omega$, which is slightly out of range of the accepted value.
+    The data for the non-ohmic behavior shows a non-linear relationship between voltage and current, as seen in Figure~\ref{fig:non_ohmic_graph} and Figure~\ref{fig:non_ohmic_graph_red}.
+    This linear relationship only begins after a minimum voltage is met, which is likely due to the LED acting like a wire once the minimum voltage is met.
+    Beforehand, the LED acts like a wall.
 
-
-
+    The red LED has a higher resistance than the green LED, which is likely due to the red LED having a higher
+    voltage drop than the green LED\@.
+    This is because it is a larger wavelength, and thus has a larger energy gap, which requires more energy to pass through.
+    After the minimum voltage is met, the LED acts like a wire, so the resistance is the same as the other resistor in series with it.
 
 
     \section{Kirchhoff's Laws}\label{sec:kirchoff}
