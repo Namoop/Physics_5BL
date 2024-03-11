@@ -16,6 +16,7 @@
 \usepackage{tikz}
 \usepackage{indentfirst}
 \usepackage{circuitikz}
+\usepackage{calc}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % LaTeX Overlay Generator - Annotated Figures v0.0.1
@@ -52,7 +53,8 @@
 
     For experiment 0, we simply measured the resistance of a 1 $\Omega$ resistor, however, we found that our measurement was outside the expected range of values using .01 $\Omega$ as the error in the resistors measurement. 
 
-    For experiment 1A, we first measured the transfer ratio $(H \equiv V_{out} /V_{in})$ of a circuit with two 1000 $\Omega$ resistors in it, which we found to be .5005, inside the range of error for the accepted value of 0.5. we then used the DMM to measure voltage, comparing this to our voltage from the previous part, and finding that they both agreed with each other. For experiment 1B, we created a circuit with a 10,000 $\Omega$ resistor in it and measured the current using both the IOLab and the DMM. Our measured current from the IOLab was 0.229 mA, slightly out of the range of the accepted value of 0.2 mA. However, when using the DMM, we measured exactly 0.2 mA. We then determined the IOLab had higher sensitivity due to the large amount of decimals it gave and its high error from the expected value.
+    For experiment 1A, we first measured the transfer ratio $(H \equiv V_{out} /V_{in})$ of a circuit with two 1000 $\Omega$ resistors in it, which we found to be .5005, inside the range of error for the accepted value of 0.5. we then used the DMM to measure voltage, comparing this to our voltage from the previous part, and finding that they both agreed with each other.
+    For experiment 1B, we created a circuit with a 10,000 $\Omega$ resistor in it and measured the current using both the IOLab and the DMM. Our measured current from the IOLab was 0.229 mA, slightly out of the range of the accepted value of 0.2 mA. However, when using the DMM, we measured exactly 0.2 mA. We then determined the IOLab had higher sensitivity due to the large number of decimals it gave and its high error from the expected value.
 
     For experiment 2A, we first measured the current across a 10,000 $\Omega$ resistor to measure ohmic behavior.
     We used 10 different input voltages and found that it obeyed Ohm's law.
@@ -121,7 +123,7 @@
     The DMM was set to measure resistance, and the banana cables were connected to the resistor.
     This can be seen in Figure~\ref{fig:resistance_setup}.
 
-    \begin{figure}[h]
+    \begin{figure}[h!]
         \begin{annotatedFigure}
         {\includegraphics[width=1.0\linewidth]{resources/images/part0_setup}}
             \annotatedFigureBox{0.138,0.3873}{0.348,0.9773}{A}{0.138,0.3873}%bl
@@ -151,7 +153,10 @@
     The use of a DMM makes human error virtually nonexistent.
     In conclusion, the measured resistance is within the expected range, and the DMM is a reliable tool for measuring resistance.
 
-    \section{Measuring Voltage (Experiment 1A)}\label{sec:voltage}
+    \newcounter{section2}
+    \renewcommand\thesection{\arabic{section}\Alph{section2}}
+    \setcounter{section2}{1}
+    \section{Measuring Voltage}\label{sec:voltage}
 
     \subsection{Methods}\label{subsec:voltage_methods}
 
@@ -159,7 +164,7 @@
     We measured the voltage at two different parts of the circuit—the initial voltage from the DAC and the voltage after $R_1$.
     We then found the transfer ratio H, found from equation~\ref{eq:transfer_ratio}.
 
-    \begin{figure}[h]
+    \begin{figure}[h!]
         \begin{center}
             \begin{circuitikz}[american]
                 \draw (0,0) to[battery1=$V_1$, inverted] ++(6,0)
@@ -178,11 +183,17 @@
 
     \subsection{Analysis}\label{subsec:voltage_analysis}
 
-    When we used the IOLab to measure the voltage difference across $R_1$, we got the following graph:
-    \todo{put in graph called Voltage over Time Part 1A1}
+    When we used the IOLab to measure the voltage difference across $R_1$, we got the graph in figure~\ref{fig:voltage_graph_1a1}.
+    \begin{f}[h!]
+        \begin{center}
+            \includegraphics[width=1.0\linewidth]{resources/images/part1a1_voltage_over_time}
+        \end{center}
+        \caption{Graph of the voltage difference across $R_1$.}
+        \label{fig:voltage_graph_1a1}
+    \end{f}
 
     This graph shows the input (A7) volts and the output (A8) volts.
-    When we take the time segment from 4 seconds to 8 seconds, and use equation~\ref{eq:transfer_ratio}, we find the Transfer Ratio (H): 0.5006 ± 7.218*10\^-5.
+    When we take the time segment from 4 seconds to 8 seconds, and use equation~\ref{eq:transfer_ratio}, we find the Transfer Ratio $(H): 0.5006 \pm 7.218 * 10^-5$.
     We can use a comparison test, using 1\% as the uncertainty for resistors greater than 1 $\Omega$.
     The error for the transfer ratio is the error for $V$, which is 0.01.
     
@@ -215,14 +226,16 @@
     The comparison tests conducted, along with the agreement test, demonstrate that the values obtained from the two instruments align well with the experiment.
     However, when evaluating voltage divider circuits, potential errors could stem from resistor tolerances, temperature fluctuations, and equipment accuracy.
 
-    \section{Measuring Current (Experiment 1B)}\label{sec:current}
+    \setcounter{section}{0}
+    \setcounter{section2}{2}
+    \section{Measuring Current}\label{sec:current}
 
     \subsection{Methods}\label{subsec:current_methods}
 
     Figure~\ref{fig:current_setup_1b} shows the setup used in this experiment, consisting of a battery, a 10,000 $\Omega$ resistor, and a 1 $\Omega$ resistor.
     We measured the current across $R_2$, which is the 1 $\Omega$ resistor, and compared it to the accepted value of 0.2 mA\@.
 
-    \begin{figure}[h]
+    \begin{figure}[h!]
         \begin{center}
             \begin{circuitikz}[american]
                 \draw (0,0) to[battery1=$V_1$, inverted] ++(6,0)
@@ -240,8 +253,14 @@
 
     \subsection{Analysis}\label{subsec:current_analysis}
 
-    When we used the IOLab to measure the current, we got the following graph:
-    \todo{put in graph called A7 volts (Voltage) over Time Part 1B1}
+    When we used the IOLab to measure the current, we got graph in figure~\ref{fig:current_graph_1b1}.
+    \begin{f}[h!]
+        \begin{center}
+            \includegraphics[width=1.0\linewidth]{resources/images/part1b1_voltage_over_time}
+        \end{center}
+        \caption{Graph of the voltage difference across $R_2$.}
+        \label{fig:current_graph_1b1}
+    \end{f}
 
     This graph shows the input (A7) volts and the current.
     When we take the time segment from 2.5 seconds to 6 seconds, we find the average current to be 0.2294 +- 1.189e-05.
@@ -270,8 +289,8 @@
     Possible errors in the current measurement experiment include variations in resistor tolerances, temperature effects on resistance, differences in instrument calibration, potential measurement technique inaccuracies, sampling interval limitations, and human errors in experiment setup or data recording.
     These factors could have contributed to the observed discrepancies between the IOLab and DMM measurements.
 
-
-    \section{Ohmic and Non-Ohmic Behavior (Experiment 2)}\label{sec:ohmic}
+    \renewcommand\thesection{\arabic{section}}
+    \section{Ohmic and Non-Ohmic Behavior}\label{sec:ohmic}
 
     \subsection{Methods}\label{subsec:ohmic_methods}
 
@@ -281,7 +300,7 @@
     This can be seen in Figure~\ref{fig:ohmic_setup}.
     The IOLab was set to provide a voltage ranging from 1 V to 3.3 V\@.
 
-    \begin{figure}[h]
+    \begin{figure}[h!]
         \begin{annotatedFigure}
         {\includegraphics[width=1.0\linewidth]{resources/images/part2_setup}}
             \annotatedFigureBox{0.196,0.6112}{0.483,0.946}{A}{0.196,0.6112}%bl
@@ -297,80 +316,12 @@
     The DMM was set to measure voltage, and the banana cables were connected to the resistor.
     We recorded the voltage across the resistor as the voltage was increased.
     This resulted in the data shown in Figure~\ref{fig:ohmic_data}.
-    \begin{figure}[h!]
-        \centering
-        \begin{tabular}{|c|c|}
-            \hline
-            \text{Volts (V)} & \text{Amps (A)} \\
-            \hline
-            0 & 0 \\
-            0.3 & 0.00003 \\
-            0.6 & 0.00006 \\
-            1.0 & 0.00009 \\
-            1.3 & 0.00013 \\
-            1.6 & 0.00015 \\
-            1.9 & 0.00020 \\
-            2.2 & 0.00023 \\
-            2.5 & 0.00026 \\
-            2.8 & 0.00030 \\
-            3.1 & 0.00032 \\
-            \hline
-        \end{tabular}
-        \caption{Voltage and current data for the experiment.}
-        \label{fig:ohmic_data}
-    \end{figure}
-    \todo{move tables to appendix}
-    \todo{add error to table}
+
 
     We measured non-ohmic behavior for two different LEDs, one green and one red.
     The LED was connected in series with a 1 k$\Omega$ resistor.
     We recorded the voltage across the LED as the DAC voltage was increased.
     This resulted in the green LED data shown in Figure~\ref{fig:non_ohmic_data_green} and the red LED data shown in Figure~\ref{fig:non_ohmic_data_red}.
-    \begin{figure}[h!]
-        \centering
-        \begin{tabular}{|c|c|c|}
-            \hline
-            \text{A7 (Input) Voltage (V)} & \text{A8 (After LED) Voltage (V)} & \text{Current (A)} \\
-            \hline
-            1.0 & 0 & 0 \\
-            1.3 & 0 & 0 \\
-            1.6 & 0.005 & 0.00001 \\
-            1.7 & 0.027 & 0.00003 \\
-            1.9 & 0.17 & 0.00017 \\
-            2.2 & 0.43 & 0.00043 \\
-            2.4 & 0.624 & 0.00063 \\
-            2.5 & 0.72 & 0.00072 \\
-            2.8 & 0.91 & 0.00091 \\
-            3.1 & 1.20 & 0.00121 \\
-            3.3 & 1.37 & 0.00138 \\
-            \hline
-        \end{tabular}
-        \caption{Voltage and current data for the green LED experiment.}
-        \label{fig:non_ohmic_data_green}
-    \end{figure}
-
-    \begin{figure}[h!]
-        \centering
-        \begin{tabular}{|c|c|c|}
-            \hline
-            \text{A7 (Input) Voltage (V)} & \text{A8 (After LED) Voltage (V)} & \text{Current (A)} \\
-            \hline
-            0.8 & 0 & 0 \\
-            1.0 & 0 & 0 \\
-            1.3 & 0.004 & 0.000005 \\
-            1.6 & 0.027 & 0.000023 \\
-            1.8 & 0.18 & 0.00018 \\
-            2.1 & 0.50 & 0.00054 \\
-            2.3 & 0.799 & 0.0008 \\
-            2.5 & 0.98 & 0.001 \\
-            2.8 & 1.19 & 0.00123 \\
-            3.1 & 1.41 & 0.00140 \\
-            3.3 & 1.67 & 0.00165 \\
-            \hline
-        \end{tabular}
-        \caption{Voltage and current data for the red LED experiment.}
-        \label{fig:non_ohmic_data_red}
-    \end{figure}
 
     \subsection{Analysis}\label{subsec:ohmic_analysis}
 
@@ -379,7 +330,7 @@
     \begin{figure}[h!]
         \centering
         \includegraphics[width=1.0\linewidth]{resources/images/part2a_ohmic_graph}
-        \caption{Graph of the ohmic behavior data. \todo{error bars}}
+        \caption{Graph of the ohmic behavior data. \todo{error bars}} % TODO: error bars
         \label{fig:ohmic_graph}
     \end{figure}
 
@@ -410,14 +361,14 @@
     \begin{figure}[h!]
         \centering
         \includegraphics[width=1.0\linewidth]{resources/images/part2_non_ohmic_graph}
-        \caption{Graph of the non-ohmic behavior data. \todo{error bars}}
+        \caption{Graph of the non-ohmic behavior data. \todo{error bars}} % TODO: error bars
         \label{fig:non_ohmic_graph}
     \end{figure}
     The red LED data shows similar relationship between voltage and current, as seen in Figure~\ref{fig:non_ohmic_graph_red}.
     \begin{figure}[h!]
         \centering
         \includegraphics[width=1.0\linewidth]{resources/images/part2_non_ohmic_data_red}
-        \caption{Graph of the non-ohmic behavior data for the red LED. \todo{error bars}}
+        \caption{Graph of the non-ohmic behavior data for the red LED. \todo{error bars}} % TODO: error bars
         \label{fig:non_ohmic_graph_red}
     \end{figure}
 
@@ -474,7 +425,7 @@
 
     \subsection{Methods}\label{subsec:kirchoff_methods}
 
-    \begin{figure}[h]
+    \begin{figure}[h!]
         \begin{center}
             \begin{circuitikz}[american]
                 \draw (0,0) to[battery1=$V_1$] ++(0,3)
@@ -544,29 +495,111 @@
         \end{align*}
     \end{e}
 
-    We also found that our data did not obey Kirchhoff's Junction rule, as we can clearly see that $I_1$ + $I_2$ does not equal $I_3$. This means our data was off significantly and we should not expect it to be within an acceptable range.
+    We also found that our data did not obey Kirchhoff's Junction rule, as we can clearly see that $I_1$ + $I_2$ does not equal $I_3$.
+    This means our data was off significantly, and we should not expect it to be within an acceptable range.
 
     \subsection{Conclusion}\label{subsec:kirchoff_conclusion}
 
     Based on the analysis conducted using Kirchhoff's Laws and the experimental measurements, it's evident that there are discrepancies between the expected values and the measured values of currents in the circuit. The measured currents do not align with the values predicted by Kirchhoff's Laws, indicating potential errors in the experimental setup or measurements.
 
     The observed disagreement between the expected and measured currents, along with the violation of Kirchhoff's Junction rule (I1 + I2 ≠ I3), suggests that there are systematic errors or inaccuracies in the experimental setup, measurement instruments, or data collection process.
-    
+
     It can be concluded that further investigation and troubleshooting are required to identify and rectify the sources of error in the experiment. This may involve rechecking the circuit connections, calibrating measurement instruments, ensuring proper placement and functioning of resistors acting as ammeters, and considering environmental factors that could influence the measurements. Additionally, repeating the experiment with enhanced precision and control measures may be necessary to obtain reliable and accurate results consistent with Kirchhoff's Laws.
 
     \section{Conclusion}\label{sec:conclusion}
 
-    This laboratory experiment aimed to explore fundamental electrical measurements and circuit analysis techniques using Digital Multimeters (DMMs) and the IOLab device. We seek to validate theoretical concepts through practical experimentation, focusing on resistance measurement, voltage division, current measurement, and application of Kirchhoff's laws.
+    This laboratory experiment aimed to explore fundamental electrical measurements and circuit analysis techniques using Digital Multimeter's (DMMs) and the IOLab device.
+    We seek to validate theoretical concepts through practical experimentation, focusing on resistance measurement, voltage division, current measurement, and application of Kirchhoff's laws.
 
-    In part 0, we measured the resistance of a resistor and performed an agreement test with the nominal value obtained from the color code. The DMM provided accurate resistance measurements, offering a reliable tool for such tasks.
+    In part 0, we measured the resistance of a resistor and performed an agreement test with the nominal value obtained from the color code.
+    The DMM provided accurate resistance measurements, offering a reliable tool for such tasks.
 
-    For part 1, experimenting with a voltage divider circuit using both the IOLab and DMM, we verified the transfer ratio and compared experimental values with theoretical ones. The IOLab and DMM measurements exhibited good agreement for voltage, demonstrating their efficacy in voltage measurements. However, they differed when measuring current.
+    For part 1, experimenting with a voltage divider circuit using both the IOLab and DMM, we verified the transfer ratio and compared experimental values with theoretical ones.
+    The IOLab and DMM measurements exhibited good agreement for voltage, demonstrating their efficacy in voltage measurements.
+    However, they differed when measuring current.
 
-    In Experiment 2, we investigated Ohm's law using resistors and analyzed the linear relationship between voltage and current. However, our measurements were off and couldn't verify the correct measured resistance. Experiment 2B explored non-Ohmic behavior using LEDs, highlighting deviations from Ohm's law due to semiconductor properties. Our data suggested that the LEDs were not ohmic, as they first acted like walls then acted like wires.
+    In Experiment 2, we investigated Ohm's law using resistors and analyzed the linear relationship between voltage and current.
+    However, our measurements were off and couldn't verify the correct measured resistance.
+    Experiment 2B explored non-Ohmic behavior using LEDs, highlighting deviations from Ohm's law due to semiconductor properties.
+    Our data suggested that the LEDs were not ohmic, as they first acted like walls then acted like wires.
 
-    Finally, in Part 3, we applied Kirchhoff's laws to analyze a complex circuit setup. By comparing predicted and measured currents and voltages, we found our measurements were off, meaning we could not verify Kirchhoff's junction rule.
+    Finally, in Part 3, we applied Kirchhoff's laws to analyze a complex circuit setup.
+    By comparing predicted and measured currents and voltages, we found our measurements were off, meaning we could not verify Kirchhoff's junction rule.
 
-    Through precise resistance measurements with the DMM, analysis of voltage division using both the IOLab and DMM, comparison of current measurement techniques and application of Kirchhoff's laws in circuit analysis, this experiment provided practice using electrical circuits and theory. The exploration enhanced our understanding of electrical measurements and equipped us with essential skills for future endeavors in electrical engineering.
+    Through precise resistance measurements with the DMM, analysis of voltage division using both the IOLab and DMM, comparison of current measurement techniques and application of Kirchhoff's laws in circuit analysis, this experiment provided practice using electrical circuits and theory.
+    The exploration enhanced our understanding of electrical measurements and equipped us with essential skills for future endeavors in electrical engineering.
+
+    \appendix
+    \section{Data}\label{sec:data}
+
+    \begin{figure}[h!]
+        \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            \text{Volts (V)} & \text{Amps (A)} \\
+            \hline
+            0 & 0 \\
+            0.3 & 0.00003 \\
+            0.6 & 0.00006 \\
+            1.0 & 0.00009 \\
+            1.3 & 0.00013 \\
+            1.6 & 0.00015 \\
+            1.9 & 0.00020 \\
+            2.2 & 0.00023 \\
+            2.5 & 0.00026 \\
+            2.8 & 0.00030 \\
+            3.1 & 0.00032 \\
+            \hline
+        \end{tabular}
+        \caption{Voltage and current data for the experiment.}
+        \label{fig:ohmic_data}
+    \end{figure}
+
+    \begin{figure}[h!]
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            \text{A7 (Input) Voltage (V)} & \text{A8 (After LED) Voltage (V)} & \text{Current (A)} \\
+            \hline
+            1.0 & 0 & 0 \\
+            1.3 & 0 & 0 \\
+            1.6 & 0.005 & 0.00001 \\
+            1.7 & 0.027 & 0.00003 \\
+            1.9 & 0.17 & 0.00017 \\
+            2.2 & 0.43 & 0.00043 \\
+            2.4 & 0.624 & 0.00063 \\
+            2.5 & 0.72 & 0.00072 \\
+            2.8 & 0.91 & 0.00091 \\
+            3.1 & 1.20 & 0.00121 \\
+            3.3 & 1.37 & 0.00138 \\
+            \hline
+        \end{tabular}
+        \caption{Voltage and current data for the green LED experiment.}
+        \label{fig:non_ohmic_data_green}
+    \end{figure}
+
+    \begin{figure}[h!]
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            \text{A7 (Input) Voltage (V)} & \text{A8 (After LED) Voltage (V)} & \text{Current (A)} \\
+            \hline
+            0.8 & 0 & 0 \\
+            1.0 & 0 & 0 \\
+            1.3 & 0.004 & 0.000005 \\
+            1.6 & 0.027 & 0.000023 \\
+            1.8 & 0.18 & 0.00018 \\
+            2.1 & 0.50 & 0.00054 \\
+            2.3 & 0.799 & 0.0008 \\
+            2.5 & 0.98 & 0.001 \\
+            2.8 & 1.19 & 0.00123 \\
+            3.1 & 1.41 & 0.00140 \\
+            3.3 & 1.67 & 0.00165 \\
+            \hline
+        \end{tabular}
+        \caption{Voltage and current data for the red LED experiment.}
+        \label{fig:non_ohmic_data_red}
+    \end{figure}
 
     \section{References}\label{sec:references}
 
