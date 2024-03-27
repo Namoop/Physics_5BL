@@ -75,9 +75,53 @@
 
 
 
+
+
+
+
+
+
     \section{Part 2A: RLC Underdamped Transient Response}\label{sec:part2a_underdamped}
     \subsection{Methods}\label{subsec:part2a_methods}
+    This section covers the first part of experiment 2, which uses an RLC Circuit to find the underdamped transient response. We used a 100 mH inductor, 0.1 µF capacitor, and a 50 Ω resistor (two 100 Ω resistors in parallel), as seen in the following diagram:
+
+    todo - picture of part 2a circuit
+    caption: Circuit setup for part 2a
+
+    We also has to use the function generator to create a signal. We used a 10 Hz square wave with 4 Vpp and an output impedance of 50 Ω. We saw the following wave on our oscilloscope:
+
+    todo - picture of part 2a graph
+    caption: Data from experiment 2a
+
+    We then recorded the peaks of the wave and recorded them in the following data table:
+
+    \begin{table}[h]
+    \centering
+    \caption{Time and Voltage Measurements}
+    \begin{tabular}{cc}
+    \toprule
+    \textbf{Time (ms)} & \textbf{Volts (mV)} \\
+    \midrule
+    13.04 & 3.97 \\
+    13.2 & -176 \\
+    13.52 & 136 \\
+    13.85 & -96 \\
+    14.18 & 72 \\
+    14.504 & -56 \\
+    14.804 & 48 \\
+    15.184 & -32 \\
+    15.504 & 24 \\
+    15.848 & -16 \\
+    16.128 & 8 \\
+    \bottomrule
+    \end{tabular}
+    \end{table}
+
+    
+    
     \subsection{Analysis}\label{subsec:part2a_analysis}
+
+
 
     \section{Part 2B: RLC Overdamped Transient Response}\label{sec:part2b_overdamped}
     \subsection{Methods}\label{subsec:part2b_methods}
