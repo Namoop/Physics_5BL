@@ -192,9 +192,36 @@
 
     
     \subsection{Analysis}\label{subsec:part2b_analysis}
+    We divided each voltage we obtained by the input volgtage (4 V) in
+    order to fit it to our equation, although its important to note that
+    this only changes the amplitude. We graphed the new data points and fit
+    them to equation (todo underdamped equation). We obtained the following
+    graph and its residuals:
 
+    todo input part 2b graph and residuals
+    caption for graph: overdamped RLC Circuit data and fit
+    caption for residuals: overdamped RLC Circuit residuals
+
+    From this, we can see that our graph is a good fit, as it goes through or close to all the points. The residuals are also randomly scattered around the 0 line. Our value for D is 1518.932 +/- 30.657. When we solve for \( \alpha \), it is unnecessary to account for the resistance from the inductor, since the resistor is much larger than the resistance the inductor will provide, allowing us to consider it negligible. Calculating \( \alpha \) using theoretical values and the equation (todo put in equations for alpha they in lab notebook), we get the value:
+
+    \[
+    \alpha = \frac{10000}{2 \times 0.1} \\) = 50{,}000
+    \]
+
+    We can clearly see a large difference in our value for \( \alpha \). We can do an agreement test from equation (todo agreement test eq) to test our values for \( \alpha \).
+
+    \begin{e}
+        \begin{align*}
+            |1518.932 - 50000| &\ge 2 \sqrt{30.657^2 + 500^2} \\
+            48481.068 &\ge 2 \sqrt{250939.852} \\
+            48481.068 &\ge 500.93897
+        \end{align*}
+    \end{e}
+
+    As we can see, our value for \( \alpha \) is very far outside our accepted range. This could be due to our measured circuit resistance being lower than it actually was. The damping ratio in an RLC circuit could also vary depending on the frequency of the input signal. At certain frequencies, the circuit might exhibit more pronounced oscillations due to resonance effects, resulting in a lower damping ratio. Also, any additional sources of energy loss in the circuit, such as resistance in the connections, stray capacitance, or inductance, could have contributed to the lower value for \( \alpha \).
+
+    
     \section{Part 2 Conclusion}\label{sec:part2_conclusion}
-
 
     \section{Lab Conclusion}\label{sec:conclusion}
 
