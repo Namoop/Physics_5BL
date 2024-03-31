@@ -43,43 +43,83 @@
 
     \section*{Introduction}\label{sec:introduction}
     \addcontentsline{toc}{section}{Introduction}
-    this report will cover RC circuits.
 
-
-
-
-
-
-
-
+    In this lab, we will be studying the behavior of simple RC and RLC circuits.
+    We will find the time constant of an RC circuit and the resonant frequency of an RLC circuit.
+    The circuits will be driven by a function generator, and the voltage across the capacitor or inductor will be measured with an oscilloscope.
 
     \section*{Theory}\label{sec:theory}
+    \addcontentsline{toc}{section}{Theory}
 
+    The capacitance of a capacitor is defined by the equation
+    \begin{equation}
+        C = \frac{Q}{V}
+    \end{equation}\label{eq:capacitance}
+    where $C$ is the capacitance, $Q$ is the charge stored on the capacitor, and $V$ is the voltage across the capacitor.
 
+    With the parallel plate capacitor, which we use in our circuits the capacitance is given by
+    \begin{equation}
+        C = \frac{\varepsilon_r \varepsilon_0 A}{d}
+    \end{equation}\label{eq:parallel-plate-capacitance}
+    where $\varepsilon_r$ is the relative permittivity of the dielectric, $\varepsilon_0$ is the vacuum permittivity, $A$ is the area of the plates, and $d$ is the separation between the plates.
 
+    The charge in a discharging capacitor is given by
+    \begin{equation}
+        Q(t) = Q_0 e^{-t/RC}
+    \end{equation}\label{eq:discharging-capacitor}
+    with RC being the time constant of the circuit, $\tau$.
 
+    An RLC circuit requires different paramters to be defined.
+    The resonant frequency of an RLC circuit is calculated with
+    \begin{equation}
+        \omega_0 = \frac{1}{\sqrt{LC}}
+    \end{equation}\label{eq:omega-0}
+    where $L$ is the inductance, and $C$ is the capacitance.
+    A factor of inverse time constant is given by
+    \begin{equation}
+        \alpha = \frac{R}{2L}
+    \end{equation}\label{eq:alpha}
 
+    This allows the circuit to be analysed as damped, underdamped, or overdamped, using the ratio $\frac{\alpha}{\omega_0}$.
+    The frequency is thus given by
+    \begin{equation}
+        \omega = 2\pi f
+    \end{equation}\label{eq:frequency}
 
+    The voltage across a discharging capacitor in an RC circuit should fit the equation
+    \begin{equation}
+        V(t) = A e^{-t/B}
+    \end{equation}\label{eq:capacitor-voltage}
+    where $A$ is the initial voltage, and $B$ is the time constant.
 
+    \section{Time Constant With Oscilloscope}\label{sec:measuring-time-constant}
 
+    \subsection{Methods}\label{subsec:measuring-time-constant-methods}
 
-    \section{Part 1A: Measuring RC Time Constant}\label{sec:part1a_time_constant}
-    \subsection{Methods}\label{subsec:part1a_methods}
-    \subsection{Analysis}\label{subsec:part1a_analysis}
+    The first experiment was to measure the time constant of an RC circuit.
+    The circuit was set up as shown in Figure\ref{fig:rc-circuit}.
+    The function generator was set to produce a square wave with a frequency of 100 mHz and a peak-to-peak voltage of 10 V.
+    The voltage across the capacitor was measured with an oscilloscope.
 
-    \section{Part 1B: Handcrafting a Capacitor}\label{sec:part1b_capacitor}
-    \subsection{Methods}\label{subsec:part1b_methods}
-    \subsection{Analysis}\label{subsec:part1b_analysis}
+    \begin{figure}[h!]
+        \begin{center}
+            \begin{circuitikz}[american]
+                \draw (0,0) to [sV=$V_1$] ++ (0,2)
+                to [R=$R$] ++ (2,0)
+                to [C=$C$] ++ (2, 0)
+                -- ++ (0,-2)
+                -- ++ (-4,0);
+            \end{circuitikz}
+        \end{center}
+        \caption{RC Circuit}
+        \label{fig:rc-circuit}
+    \end{figure}
 
-    \section{Part 1 Conclusion}\label{sec:part1_conclusion}
+    First, the time constant was found with a known resistor and capacitor.
+    Afterward, we constructed a capacitor using aluminum foil and paper, and measured the time constant with a larger resistor.
+    Again, the resistance was known, and the capacitance was calculated from the area and separation of the plates.
 
-
-
-
-
-
-
-
+    \subsection{Analysis}\label{subsec:measuring-time-constant-analysis}
 
     \section{Part 2A: RLC Underdamped Transient Response}\label{sec:part2a_underdamped}
     \subsection{Methods}\label{subsec:part2a_methods}
@@ -96,40 +136,40 @@
     We then recorded the peaks of the wave and recorded them in the following data table:
 
     \begin{table}[h]
-    \centering
-    \caption{Time and Voltage Measurements Part 2A}
-    \begin{tabular}{cc}
-    \toprule
-    \textbf{Time (ms)} & \textbf{Volts (mV)} \\
-    \midrule
-    0.00 & 3.97 \\
-    0.16 & -176 \\
-    0.48 & 136 \\
-    0.81 & -96 \\
-    1.14 & 72 \\
-    1.464 & -56 \\
-    1.764 & 48 \\
-    2.144 & -32 \\
-    2.464 & 24 \\
-    2.808 & -16 \\
-    3.088 & 8 \\
-    \bottomrule
-    \end{tabular}
+        \centering
+        \caption{Time and Voltage Measurements Part 2A}
+        \begin{tabular}{cc}
+            \toprule
+            \textbf{Time (ms)} & \textbf{Volts (mV)} \\
+            \midrule
+            0.00 & 3.97 \\
+            0.16 & -176 \\
+            0.48 & 136 \\
+            0.81 & -96 \\
+            1.14 & 72 \\
+            1.464 & -56 \\
+            1.764 & 48 \\
+            2.144 & -32 \\
+            2.464 & 24 \\
+            2.808 & -16 \\
+            3.088 & 8 \\
+            \bottomrule
+        \end{tabular}
     \end{table}
 
-    
-    
+
+
     \subsection{Analysis}\label{subsec:part2a_analysis}
-    We divided each voltage we obtained by the effective resistance (125 Ω)  in order to fit it to the current equation, although its important to note that this only changes the amplitude. We graphed the new data points and fit them to equation (todo underdamped equation). We obtained the following graph and its residuals: 
+    We divided each voltage we obtained by the effective resistance (125 Ω)  in order to fit it to the current equation, although its important to note that this only changes the amplitude. We graphed the new data points and fit them to equation (todo underdamped equation). We obtained the following graph and its residuals:
 
     todo input part 2a graph and residuals
     caption for graph: Underdamped RLC Circuit data and fit
     caption for residuals: Underdamped RLC Circuit residuals
 
     From this, we can see that our value for x (\( \alpha \)) is 870.141 +/- 31.419 and w (\( \omega \)) is 9706.289 +/- 101.561. Solving for \( \omega_0 \), using equation (todo omega naught eq in lab notebook), we get 9745.214 +/- 101.194. When we solve for those values using theoretical values and the equations (todo put in equations for alpha and omega, they in lab notebook), we get the values:
-    
+
     \alpha = \frac{125}{2 \times 0.1} = 625
-    
+
     \omega = \frac{1}{\sqrt{0.1^2 \times 10^{-6}}} = \frac{1}{0.1 \times 10^{-3}} = 10000
 
 
@@ -168,29 +208,29 @@
     We then recorded the peaks of the wave and recorded them in the following data table:
 
     \begin{table}[h]
-    \centering
-    \caption{Time and Voltage Measurements Part 2B}
-    \begin{tabular}{cc}
-    \toprule
-    \textbf{Time (ms)} & \textbf{Volts (V)} \\
-    \midrule
-    0.00 & 3.96 \\
-    0.16 & 3.08 \\
-    0.28 & 2.52 \\
-    0.44 & 1.96 \\
-    0.64 & 1.48 \\
-    0.80 & 1.16 \\
-    0.96 & 0.92 \\
-    1.16 & 0.68 \\
-    1.60 & 0.44 \\
-    2.04 & 0.20 \\
-    3.76 & 0.12 \\
-    5.20 & 0.04 \\
-    \bottomrule
-    \end{tabular}
+        \centering
+        \caption{Time and Voltage Measurements Part 2B}
+        \begin{tabular}{cc}
+            \toprule
+            \textbf{Time (ms)} & \textbf{Volts (V)} \\
+            \midrule
+            0.00 & 3.96 \\
+            0.16 & 3.08 \\
+            0.28 & 2.52 \\
+            0.44 & 1.96 \\
+            0.64 & 1.48 \\
+            0.80 & 1.16 \\
+            0.96 & 0.92 \\
+            1.16 & 0.68 \\
+            1.60 & 0.44 \\
+            2.04 & 0.20 \\
+            3.76 & 0.12 \\
+            5.20 & 0.04 \\
+            \bottomrule
+        \end{tabular}
     \end{table}
 
-    
+
     \subsection{Analysis}\label{subsec:part2b_analysis}
     We divided each voltage we obtained by the input volgtage (4 V) in
     order to fit it to our equation, although its important to note that
@@ -205,7 +245,7 @@
     From this, we can see that our graph is a good fit, as it goes through or close to all the points. The residuals are also randomly scattered around the 0 line. Our value for A is 0.980 +/- 0.011 and D is 1518.932 +/- 30.657. When we solve for \( \alpha \), it is unnecessary to account for the resistance from the inductor, since the resistor is much larger than the resistance the inductor will provide, allowing us to consider it negligible. Calculating \( \alpha \) using theoretical values and the equation (todo put in equations for alpha they in lab notebook), we get the value:
 
     \[
-    \alpha = \frac{10000}{2 \times 0.1} \\ = 50{,}000
+        \alpha = \frac{10000}{2 \times 0.1} \\ = 50{,}000
     \]
 
     We can clearly see a large difference in our value for \( \alpha \). We can do an agreement test from equation (todo agreement test eq) to test our values for \( \alpha \).
@@ -220,10 +260,10 @@
 
     As we can see, our value for \( \alpha \) is very far outside our accepted range. This could be due to our measured circuit resistance being lower than it actually was. The damping ratio in an RLC circuit could also vary depending on the frequency of the input signal. At certain frequencies, the circuit might exhibit more pronounced oscillations due to resonance effects, resulting in a lower damping ratio. Also, any additional sources of energy loss in the circuit, such as resistance in the connections, stray capacitance, or inductance, could have contributed to the lower value for \( \alpha \).
 
-    
+
     \section{Part 2 Conclusion}\label{sec:part2_conclusion}
-    In part 2 of this lab, we designed 2 experiments using an RLC circuit. They both used different values for the capacitor and resistor, however, we kept the inductor at 100 mH. 
-    
+    In part 2 of this lab, we designed 2 experiments using an RLC circuit. They both used different values for the capacitor and resistor, however, we kept the inductor at 100 mH.
+
     In part A, we used a  0.1 µF capacitor and a 50 \Omega$ resistor in order to get an underdamped transient response. We then fit our data to equation (todo 2a fit equation), making sure to account for the fact that this is an equation for currently by dividing our voltages by the total resistance. We found the fit parameters \alpha$ = 870.141 +/- 31.419 and \omega_0$ = 9706.289 +/- 101.561. We found that our frequency was in the range of the accepted values, calculated from the theoretical values, however, our value for \alpha$ was outside the range. This could have been due to our measured circuit resistance being lower than it actually was or electromagnetic interference from other groups’ experiments.
 
     In part B, we used a 47 µF capacitor and a 10k \Omega$ resistor in order to get an overdamped transient response. We then fit our data to equation (todo 2b fit equation). We found the fit parameters A = 0.980 +/- 0.011 and D = 1518.932 +/- 30.657. We focused on our value for D, comparing it to the theoretical value for \alpha$, calculated using equation (todo put in equations for alpha they in lab notebook). We found that our value was outside the acceptable range of values. This error could have been due to our measured circuit resistance being lower than it was, or the damping ratio in an RLC circuit varying depending on the frequency of the input signal.
@@ -232,23 +272,21 @@
     In this lab, we learned about RC circuits and how to study the time-dependent behavior of both RC and RLC circuits with a DC source and build a capacitor. We also learned about RLC circuits and how to measure the transient response of an underdamped and overdamped circuit. We explored charging and discharging behaviors of RC series circuits and constructed our own capacitors with household materials and measured its capacitance. We then explored the transient behavior of RLC circuits and their under and overdamped properties.
 
     Part 1A involved setting up an RC circuit with a square wave input from a function generator, measuring the discharge curve across the capacitor using an oscilloscope in roll mode, and determining the time constant by analyzing the decay curve. We adjusted the oscilloscope settings to capture the decay over at least 5 time constants and utilized cursors to measure voltage drops and decay times accurately, ensuring a comprehensive understanding of the circuit's behavior.
-    
+
     In Part B, we constructed homemade capacitors by sandwiching aluminum foil between pieces of paper, aiming to maximize capacitance. We then connected these capacitors in an RC circuit with a 1 MΩ resistor to measure their capacitance using charging and discharging curves on the oscilloscope. Despite theoretical estimations, our practical capacitance values differed, likely due to imperfections in construction and contact losses.
 
     Experiment 2A involved exploring the underdamped transient response of an RLC circuit. We observed the damped ringing behavior in the voltage across the resistor using an oscilloscope, recording peak amplitudes and their time relative to the square wave input pulse for analysis. By performing a fit to the underdamped current behavior equation, we determined experimental values for the damping coefficient and the natural frequency comparing them with theoretical values to assess agreement.
 
     In Experiment 2B, we investigated the overdamped transient response of an RLC circuit. We observed the decay of the waveform and characterized the decay constant by obtaining sufficient data points. Using a direct non-linear fit, we determined the experimental decay time constant and compared it with theoretical values to evaluate agreement.
-    
+
     Overall, the experiments went into the transient behaviors of RLC circuits, exploring underdamped and overdamped regimes. Through practical setups, data acquisition, and analysis, we gained a deeper understanding of the characteristics and properties of RC and RLC circuits, and got valuable practice using the oscilloscope and experimental equipment.
-    
-    
+
+
 
     \appendix
     \section{References}\label{sec:references}
 
     Lab Manual
-
-
 
 
 \end{document}
