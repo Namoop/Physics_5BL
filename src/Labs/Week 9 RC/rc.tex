@@ -17,6 +17,7 @@
 \usepackage{indentfirst}
 \usepackage{circuitikz}
 \usepackage{calc}
+\usepackage{float}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % LaTeX Overlay Generator - Annotated Figures v0.0.1
@@ -80,7 +81,7 @@
         \alpha = \frac{R}{2L}
     \end{equation}\label{eq:alpha}
 
-    This allows the circuit to be analysed as damped, underdamped, or overdamped, using the ratio $\frac{\alpha}{\omega_0}$.
+    This allows the circuit to be analyzed as damped, underdamped, or overdamped, using the ratio $\frac{\alpha}{\omega_0}$.
     The frequency is thus given by
     \begin{equation}
         \omega = 2\pi f
@@ -92,7 +93,13 @@
     \end{equation}\label{eq:capacitor-voltage}
     where $A$ is the initial voltage, and $B$ is the time constant.
 
-    \section{Time Constant With Oscilloscope}\label{sec:measuring-time-constant}
+    We will also need an agreement test to compare our experimental values to the theoretical values.
+    The agreement test is given by
+    \begin{equation}
+        |x_{\text{exp}} - x_{\text{theo}}| \le 2 \sqrt{\sigma_{\text{exp}}^2 + \sigma_{\text{theo}}^2}
+    \end{equation}\label{eq:agreement-test}
+
+    \section{Part 1: Time Constant With Oscilloscope}\label{sec:measuring-time-constant}
 
     \subsection{Methods}\label{subsec:measuring-time-constant-methods}
 
@@ -101,7 +108,7 @@
     The function generator was set to produce a square wave with a frequency of 100 mHz and a peak-to-peak voltage of 10 V.
     The voltage across the capacitor was measured with an oscilloscope.
 
-    \begin{figure}[h!]
+    \begin{figure}[H]
         \begin{center}
             \begin{circuitikz}[american]
                 \draw (0,0) to [sV=$V_1$] ++ (0,2)
@@ -117,9 +124,72 @@
 
     First, the time constant was found with a known resistor and capacitor.
     Afterward, we constructed a capacitor using aluminum foil and paper, and measured the time constant with a larger resistor.
-    Again, the resistance was known, and the capacitance was calculated from the area and separation of the plates.
+    Again, the resistance was known, and the capacitance was estimated from the area and separation of the plates.
+
+    Our data collection procedure was simple.
+    We paused the oscilloscope with a full period of the square wave input visible.
+    We then used the cursor to record around 10-15 data points of the voltage across the capacitor.
+    We recorded the time and voltage of each point.
+
+    \begin{figure}[H]
+        \begin{annotatedFigure}
+            {\includegraphics[width=1.0\linewidth]{resources/images/rlc part 1 oscilliscope}}
+            \annotatedFigureBox{0.015,0.15}{0.963,0.9338}{A}{0.015,0.15}%bl
+            \annotatedFigureBox{0.053,0.3828}{0.647,0.8489}{B}{0.053,0.3828}%bl
+        \end{annotatedFigure}
+        \caption{The oscilloscope display of the RC circuit. (A) is the machine, and (B) is the display showing the graph of the voltage across the capacitor.}
+        \label{fig:part1_oscilloscope}
+    \end{figure}
 
     \subsection{Analysis}\label{subsec:measuring-time-constant-analysis}
+
+    The data was then analyzed by fitting the voltage across the capacitor to the equation for a discharging capacitor.
+    The time constant was then calculated from the fit.
+
+    To fit the data, we used Equation~\ref{eq:discharging-capacitor}.
+    We found the best fit parameters for the amplitude $A$ and the time constant $B$.
+
+    For the known capacitor, Figure~\ref{fig:part1a_graph} shows the voltage across the capacitor discharging over time.
+
+    \begin{figure}[H]
+        \includegraphics[width=1.0\linewidth]{resources/images/rc part 1a graph}
+        \caption{The voltage across the capacitor in the RC circuit.}
+        \label{fig:part1a_graph}
+    \end{figure}
+
+    The theoretical time constant was calculated using the known values of the resistor and capacitor.
+    Using equation~\ref{eq:capacitance}, we found the theoretical time constant to be $\tau = 1 \times 10^{3} \times 47 \times 10^{-6} = 47$ ms.
+    The data resulted in the fit values $A = 0.986 \pm 0.006$ V and $B = 0.660 \pm 0.011$ s.
+    Using the agreement test from Equation~\ref{eq:agreement-test}, we found that the theoretical value was within the range of the experimental value.
+
+    \begin{e}
+        \begin{align*}
+        |47 - 660| \le2 \sqrt{6^2 + 11^2} \\
+        613 \le25.06
+        \end{align*}
+    \end{e}
+    \todo{Check the agreement test calculation.}
+
+    Since the time constant agreed with the theoretical value, we concluded that the circuit was functioning as expected.
+    This meant that we could trust the measured time constant value for when we constructed our own capacitor.
+
+    For the handcrafted capacitor, we found the time constant with the same procedure.
+    We measured each of our capacitors.
+    The fit is shown in Figure~\ref{fig:part1b_graph_patel}.
+    \todo{show residuals}
+    \todo{add capinski data}
+
+    \begin{figure}[H]
+        \includegraphics[width=1.0\linewidth]{resources/images/rc part 1 graph patel}
+        \caption{The voltage across the capacitor in the RC circuit with the handcrafted capacitor by Patel.}
+        \label{fig:part1b_graph_patel}
+    \end{figure}
+
+    For Patel's capacitor, the time constant was found to be $9.49e*10^{-7} \pm ???$ s.
+    The resistance is known to be 1 M$\Omega$.
+    Using equation\ref{eq:capacitance}, we found the capacitance to be $9.49e*10^{-7} \divided 1 \times 10^{6} = 0.949$ F\@.
+    \todo{agreement test with expected value}
+
 
     \section{Part 2A: RLC Underdamped Transient Response}\label{sec:part2a_underdamped}
     \subsection{Methods}\label{subsec:part2a_methods}
