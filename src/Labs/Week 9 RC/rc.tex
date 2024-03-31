@@ -206,9 +206,23 @@
     \section{Part 2A: RLC Underdamped Transient Response}\label{sec:part2a_underdamped}
     \subsection{Methods}\label{subsec:part2a_methods}
     This section covers the first part of experiment 2, which uses an RLC Circuit to find the underdamped transient response. We used a 100 mH inductor, 0.1 µF capacitor, and a 50 Ω resistor (two 100 Ω resistors in parallel), as seen in the following diagram:
-
-    todo - picture of part 2a circuit
-    caption: Circuit setup for part 2a
+    
+    \begin{figure}[h]
+    \centering
+    \begin{circuitikz}
+        \draw (0,0) to[battery1, l=$V$] (0,2)
+                    to[inductor, l=$L$] (2,2)
+                    to[capacitor, l=$C$] (4,2)
+                    -- (6,2)
+                    to[R, l=$R$] (6,0)
+                    -- (4,0)
+        \draw (6,2) to[R, l=$R$] (8,2)
+                    -- (8,0)
+                    -- (6,0)
+                    -- (0,0);
+    \end{circuitikz}
+    \caption{Circuit setup for parts 2a and 2b}
+    \end{figure}
 
     We also used the function generator to create a signal. We used a 10 Hz square wave with 4 Vpp and an output impedance of 50 Ω. We saw the following wave on our oscilloscope:
 
