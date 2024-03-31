@@ -87,9 +87,21 @@
         \omega = 2\pi f
     \end{equation}\label{eq:frequency}
 
-    The voltage across a discharging capacitor in an RC circuit should fit the equation
+    We can also define another equation for ${\omega}$ using ${\omega_0}$ and ${\alpha}$:
     \begin{equation}
-        V(t) = A e^{-t/B}
+        \omega = \sqrt{\omega_0^2 - \alpha^2}
+    \end{equation}\label{eq:omega}
+
+    In part 2A, we will fit our data to the following equation for current:
+
+    \begin{equation}
+        I = Ae^{-\alpha t} \cos(\omega t - \phi)
+    \end{equation}\label{eq:current_2a}
+    Where I is current, A is the overall oscillation amplitude and $\phi$ is the phase angle.
+
+    The voltage across a discharging capacitor in an RLC circuit (part 2B) should fit the equation
+    \begin{equation}
+        V(t)/v0 = A e^{-t/B}
     \end{equation}\label{eq:capacitor-voltage}
     where $A$ is the initial voltage, and $B$ is the time constant.
 
@@ -230,20 +242,23 @@
 
 
     \subsection{Analysis}\label{subsec:part2a_analysis}
-    We divided each voltage we obtained by the effective resistance (125 Ω)  in order to fit it to the current equation, although its important to note that this only changes the amplitude. We graphed the new data points and fit them to equation (todo underdamped equation). We obtained the following graph and its residuals:
+    We divided each voltage we obtained by the effective resistance (125 $\Omega$) in order to fit it to the current equation, although its important to note that this only changes the amplitude. We graphed the new data points and fit them to equation~\ref{eq:current_2a}. We obtained the following graph and its residuals:
 
     todo input part 2a graph and residuals
     caption for graph: Underdamped RLC Circuit data and fit
     caption for residuals: Underdamped RLC Circuit residuals
 
-    From this, we can see that our value for x (\( \alpha \)) is 870.141 +/- 31.419 and w (\( \omega \)) is 9706.289 +/- 101.561. Solving for \( \omega_0 \), using equation (todo omega naught eq in lab notebook), we get 9745.214 +/- 101.194. When we solve for those values using theoretical values and the equations (todo put in equations for alpha and omega, they in lab notebook), we get the values:
+    From this, we can see that our value for x (\( \alpha \)) is 870.141 +/- 31.419 and w (\( \omega \)) is 9706.289 +/- 101.561. Solving for \( \omega_0 \) using equation ~\ref{eq:omega}, we get 9745.214 +/- 101.194. When we solve for those values using theoretical values and the equations~\ref{eq:alpha} and ~\ref{eq:omega-0}, we get the values:
 
-    \alpha = \frac{125}{2 \times 0.1} = 625
+    \begin{align*}
+        \alpha &= \frac{125}{2 \times 0.1} = 625
+    \end{align*}
 
-    \omega = \frac{1}{\sqrt{0.1^2 \times 10^{-6}}} = \frac{1}{0.1 \times 10^{-3}} = 10000
+    \begin{align*}
+        \omega &= \frac{1}{\sqrt{0.1^2 \times 10^{-6}}} = \frac{1}{0.1 \times 10^{-3}} = 10000
+    \end{align*}
 
-
-    We can clearly see a difference in our values for \( \alpha \) and \( \omega_0 \), but they are reasonable. We can do an agreement test from equation (todo agreement test eq) to test our values for \( \omega_0 \) and \( \alpha \) respectively.
+    We can clearly see a difference in our values for \( \alpha \) and \( \omega_0 \), but they are reasonable. We can do an agreement test from equation~\ref{eq:agreement-test} to test our values for \( \omega_0 \) and \( \alpha \) respectively.
 
     \begin{e}
         \begin{align*}
@@ -305,20 +320,20 @@
     We divided each voltage we obtained by the input volgtage (4 V) in
     order to fit it to our equation, although its important to note that
     this only changes the amplitude. We graphed the new data points and fit
-    them to equation (todo underdamped equation). We obtained the following
+    them to equation ~\ref{eq:capacitor-voltage}. We obtained the following
     graph and its residuals:
 
     todo input part 2b graph and residuals
     caption for graph: overdamped RLC Circuit data and fit
     caption for residuals: overdamped RLC Circuit residuals
 
-    From this, we can see that our graph is a good fit, as it goes through or close to all the points. The residuals are also randomly scattered around the 0 line. Our value for A is 0.980 +/- 0.011 and D is 1518.932 +/- 30.657. When we solve for \( \alpha \), it is unnecessary to account for the resistance from the inductor, since the resistor is much larger than the resistance the inductor will provide, allowing us to consider it negligible. Calculating \( \alpha \) using theoretical values and the equation (todo put in equations for alpha they in lab notebook), we get the value:
+    From this, we can see that our graph is a good fit, as it goes through or close to all the points. The residuals are also randomly scattered around the 0 line. Our value for A is 0.980 +/- 0.011 and D is 1518.932 +/- 30.657. When we solve for \( \alpha \), it is unnecessary to account for the resistance from the inductor, since the resistor is much larger than the resistance the inductor will provide, allowing us to consider it negligible. Calculating \( \alpha \) using theoretical values and the equation~\ref{eq:alpha}, we get the value:
 
     \[
         \alpha = \frac{10000}{2 \times 0.1} \\ = 50{,}000
     \]
 
-    We can clearly see a large difference in our value for \( \alpha \). We can do an agreement test from equation (todo agreement test eq) to test our values for \( \alpha \).
+    We can clearly see a large difference in our value for \( \alpha \). We can do an agreement test from equation ~\ref{eq:agreement-test} to test our value for \( \alpha \).
 
     \begin{e}
         \begin{align*}
@@ -334,9 +349,9 @@
     \section{Part 2 Conclusion}\label{sec:part2_conclusion}
     In part 2 of this lab, we designed 2 experiments using an RLC circuit. They both used different values for the capacitor and resistor, however, we kept the inductor at 100 mH.
 
-    In part A, we used a  0.1 µF capacitor and a 50 \Omega$ resistor in order to get an underdamped transient response. We then fit our data to equation (todo 2a fit equation), making sure to account for the fact that this is an equation for currently by dividing our voltages by the total resistance. We found the fit parameters \alpha$ = 870.141 +/- 31.419 and \omega_0$ = 9706.289 +/- 101.561. We found that our frequency was in the range of the accepted values, calculated from the theoretical values, however, our value for \alpha$ was outside the range. This could have been due to our measured circuit resistance being lower than it actually was or electromagnetic interference from other groups’ experiments.
+    In part A, we used a  0.1 µF capacitor and a 50 $\Omega$ resistor in order to get an underdamped transient response. We then fit our data to equation~\ref{eq:current_2a}, making sure to account for the fact that this is an equation for currently by dividing our voltages by the total resistance. We found the fit parameters $\alpha$ = 870.141 +/- 31.419 and $\omega_0$ = 9706.289 +/- 101.561. We found that our frequency was in the range of the accepted values, calculated from the theoretical values, however, our value for $\alpha$ was outside the range. This could have been due to our measured circuit resistance being lower than it actually was or electromagnetic interference from other groups’ experiments.
 
-    In part B, we used a 47 µF capacitor and a 10k \Omega$ resistor in order to get an overdamped transient response. We then fit our data to equation (todo 2b fit equation). We found the fit parameters A = 0.980 +/- 0.011 and D = 1518.932 +/- 30.657. We focused on our value for D, comparing it to the theoretical value for \alpha$, calculated using equation (todo put in equations for alpha they in lab notebook). We found that our value was outside the acceptable range of values. This error could have been due to our measured circuit resistance being lower than it was, or the damping ratio in an RLC circuit varying depending on the frequency of the input signal.
+    In part B, we used a 47 µF capacitor and a 10k $\Omega$ resistor in order to get an overdamped transient response. We then fit our data to equation~\ref{eq:capacitor-voltage}. We found the fit parameters A = 0.980 +/- 0.011 and D = 1518.932 +/- 30.657. We focused on our value for D, comparing it to the theoretical value for $\alpha$, calculated using equation~\ref{eq:alpha}. We found that our value was outside the acceptable range of values. This error could have been due to our measured circuit resistance being lower than it was, or the damping ratio in an RLC circuit varying depending on the frequency of the input signal.
 
     \section{Lab Conclusion}\label{sec:conclusion}
     In this lab, we learned about RC circuits and how to study the time-dependent behavior of both RC and RLC circuits with a DC source and build a capacitor. We also learned about RLC circuits and how to measure the transient response of an underdamped and overdamped circuit. We explored charging and discharging behaviors of RC series circuits and constructed our own capacitors with household materials and measured its capacitance. We then explored the transient behavior of RLC circuits and their under and overdamped properties.
