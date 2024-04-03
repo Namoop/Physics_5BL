@@ -49,11 +49,19 @@
     We will find the time constant of an RC circuit and the resonant frequency of an RLC circuit.
     The circuits will be driven by a function generator, and the voltage across the capacitor or inductor will be measured with an oscilloscope.
 
-    \todo{Check if this is right after part 1 is finished}
-    In part 1, we measured the time constant of an RC circuit with a 10 k$\Omega$ resistor and a capacitor with a capacitance of 47 μF. We found that our time constant was $\tau = 1 \times 10^{3} \times 47 \times 10^{-6} = 47$ ms. This was inside the range of accepted values. We also created our own capacitors in this section, trying to make the capacitance as large as possible. For Patels capacitor, we found the capacitance to be $9.49e*10^{-7} \divided 1 \times 10^{6} = 0.949$ F\@.
-    \todo{put in Capinski capacitor and agreement test if done}
+    In part 1, we measured the time constant of an RC circuit with a 10 k$\Omega$ resistor and a capacitor with a capacitance of 47 μF.
+    We found that our time constant was $\tau = 1 \times 10^{3} \times 47 \times 10^{-6} = 47$ ms.
+    This was inside the range of accepted values.
+    We also created our own capacitors in this section, trying to make the capacitance as large as possible.
+    For Patels capacitor, we found the capacitance to be $9.49*10^{-7} \divided 1 \times 10^{6} = 0.949$ F\@.
+    For Capinski's capacitor, we found the capacitance to be $9.01*10^{-7} \divided 1 \times 10^{6} = 0.901$ F\@.
+    The agreement test for both capacitors showed that they were within the range of the theoretical value.
+    This means that the capacitors were constructed correctly and that the capacitance was measured accurately.
+    The relative permittivity of paper was found to be 4.022, which is close to the theoretical value of 3.8.
 
-    In part 2, we measured the transient behavior of an RLC circuit. The first circuit was underdamped and was composed of a 100 mH inductor, 0.1 µF capacitor, and a 50 $\Omega$ resistor. We then fit our data to a general equation and found the experimental values of $\alpha$ and $\omega_0$ to be 870.141 +/- 31.419 and 9745.214 +/- 101.194 respectively. Our value for ω0 is inside our range of accepted values, however, our value for α is outside our accepted range. The second circuit was overdamped and was composed of a 100 mH inductor, 47 µF capacitor, and a 10 k$\Omega$ resistor. We then fit our data to a general equation and found the experimental value of $\alpha$ to be 1518.932 +/- 30.657, which fell outside the range of accepted values.
+
+    In part 2, we measured the transient behavior of an RLC circuit.
+    The first circuit was underdamped and was composed of a 100 mH inductor, 0.1 µF capacitor, and a 50 $\Omega$ resistor. We then fit our data to a general equation and found the experimental values of $\alpha$ and $\omega_0$ to be 870.141 +/- 31.419 and 9745.214 +/- 101.194 respectively. Our value for ω0 is inside our range of accepted values, however, our value for α is outside our accepted range. The second circuit was overdamped and was composed of a 100 mH inductor, 47 µF capacitor, and a 10 k$\Omega$ resistor. We then fit our data to a general equation and found the experimental value of $\alpha$ to be 1518.932 +/- 30.657, which fell outside the range of accepted values.
 
     \section*{Theory}\label{sec:theory}
     \addcontentsline{toc}{section}{Theory}
@@ -146,6 +154,7 @@
 
     Our data collection procedure was simple.
     We paused the oscilloscope with a full period of the square wave input visible.
+    This is shown in Figure~\ref{fig:part1_oscilloscope}.
     We then used the cursor to record around 10-15 data points of the voltage across the capacitor.
     We recorded the time and voltage of each point.
 
@@ -157,6 +166,16 @@
         \end{annotatedFigure}
         \caption{The oscilloscope display of the RC circuit. (A) is the machine, and (B) is the display showing the graph of the voltage across the capacitor.}
         \label{fig:part1_oscilloscope}
+    \end{figure}
+
+    \begin{figure}[H]
+        \begin{annotatedFigure}
+        {\includegraphics[width=1.0\linewidth]{resources/images/rlc part1b setup}}
+            \annotatedFigureBox{0.034,0.0441}{0.631,0.41}{A}{0.034,0.0441}%bl
+            \annotatedFigureBox{0.3226,0.5}{0.6175,0.66}{B}{0.3226,0.5}%bl
+            \annotatedFigureBox{0.7974,0.672}{0.925,0.762}{C}{0.7974,0.672}%bl
+        \end{annotatedFigure}
+        \caption{The setup for part 1b of the lab. (A) is one of the DIY capacitors, (B) is the breadboard with the resistor, and (C) shows the cables connecting to the oscilliscope and the function generator.}
     \end{figure}
 
     \subsection{Analysis}\label{subsec:measuring-time-constant-analysis}
@@ -176,17 +195,16 @@
     \end{figure}
 
     The theoretical time constant was calculated using the known values of the resistor and capacitor.
-    Using equation~\ref{eq:capacitance}, we found the theoretical time constant to be $\tau = 1 \times 10^{3} \times 47 \times 10^{-6} = 47$ ms.
-    The data resulted in the fit values $A = 0.986 \pm 0.006$ V and $B = 0.660 \pm 0.011$ s.
-    Using the agreement test from Equation~\ref{eq:agreement-test}, we found that the theoretical value was within the range of the experimental value.
+    Using $\tau = RC$ we found the theoretical time constant to be $\tau = 1 \times 10^{3} \times 47 \times 10^{-6} = 47$ ms.
+    The data resulted in the fit values $A = 0.986 \pm 0.006$ V and $B = 0.066 \pm 0.011$ s.
+    Using the agreement test from Equation (10), we found that the theoretical value was within the range of the experimental value.
 
     \begin{e}
         \begin{align*}
-        |47 - 660| \le2 \sqrt{6^2 + 11^2} \\
-        613 \le25.06
+        |47 - 66| \le2 \sqrt{6^2 + 11^2} \\
+        19 \le 26
         \end{align*}
     \end{e}
-    \todo{Check the agreement test calculation.}
 
     Since the time constant agreed with the theoretical value, we concluded that the circuit was functioning as expected.
     This meant that we could trust the measured time constant value for when we constructed our own capacitor.
@@ -194,8 +212,6 @@
     For the handcrafted capacitor, we found the time constant with the same procedure.
     We measured each of our capacitors.
     The fit is shown in Figure~\ref{fig:part1b_graph_patel}.
-    \todo{show residuals}
-    \todo{add capinski data}
 
     \begin{figure}[H]
         \includegraphics[width=1.0\linewidth]{resources/images/rc part 1 graph patel}
@@ -203,36 +219,123 @@
         \label{fig:part1b_graph_patel}
     \end{figure}
 
-    For Patel's capacitor, the time constant was found to be $9.49e*10^{-7} \pm ???$ s.
-    The resistance is known to be 1 M$\Omega$.
-    Using equation\ref{eq:capacitance}, we found the capacitance to be $9.49e*10^{-7} \divided 1 \times 10^{6} = 0.949$ F\@.
-    \todo{agreement test with expected value}
+    \begin{figure}[H]
+        \includegraphics[width=1.0\linewidth]{resources/images/rc part 1b patel residuals}
+        \caption{The random distribution of the residuals of the fit for the handcrafted capacitor by Patel shows the fit is good.}
+        \label{fig:part1b_residuals_patel}
+    \end{figure}
+
+    \begin{figure}[H]
+        \includegraphics[width=1.0\linewidth]{resources/images/rlc part 1b capinski graph}
+        \caption{The voltage across the capacitor in the RC circuit with the handcrafted capacitor by Capinski.}
+        \label{fig:part1b_graph_capinski}
+    \end{figure}
+
+    \begin{figure}[H]
+        \includegraphics[width=1.0\linewidth]{resources/images/rlc part 1b graph capinski residuals}
+        \caption{The random distribution of the residuals of the fit for the handcrafted capacitor by Capinski show the fit is good.}
+        \label{fig:part1b_residuals_capinski}
+    \end{figure}
+
+    For Patel's capacitor, the time constant was found to be $0.949 \pm 0.180$ s.
+    Using $\tau = RC$ we found the capacitance to be $9.49*10^{-9} \pm 1.8*10^{-9}$ F\@.
+    For Capinski's capacitor, shown in Figure~\ref{fig:part1b_graph_capinski}, the time constant was found to be $0.901 \pm 0.163$ s.
+    Similarly, the capacitance was thus $9.01*10^{-9} \pm 1.63*10^{-9}$ F\@.
+
+    For a theoretical value, we used Equation 2.
+    Both capacitors were about the same size, so we used the same values for the area and separation.
+    They were each about 200mm x 130mm and 0.1mm thick.
+    We used the relative permittivity of paper, which is about 3.8.
+    This gave us a theoretical capacitance of
+    \begin{align*}
+        C &= \frac{3.8 \times \epsilon_0 \times 0.200 \times 0.130}{0.0001} \\
+        &= 8.74 \times 10^{-9} \text{ F}
+    \end{align*}
+
+    The agreement test for Patel's capacitor was
+    \begin{e}
+        \begin{align*}
+            |8.74 - 9.49| \le 2 \sqrt{0.18^2 + 1.8^2} \\
+            0.75 \le 3.6
+        \end{align*}
+    \end{e}
+
+    The agreement test for Capinski's capacitor was
+    \begin{e}
+        \begin{align*}
+            |8.74 - 9.01| \le 2 \sqrt{0.18^2 + 1.63^2} \\
+            0.27 \le 3.3
+        \end{align*}
+    \end{e}
+
+    Both show that the DIY capacitors were within the range of the theoretical value.
+    This means that the capacitors were constructed correctly and that the capacitance was measured accurately.
+    If we trust the measured capacitance over the theoretical value, we can then estimate the actual permittivity of the paper used.
+    Using Eq ~\ref{eq:parallel-plate-capacitance}, we can solve for it with both capacitors.
+    For Patel's capacitor, we get
+    \begin{align*}
+        9.49 \times 10^{-9} &= \frac{\varepsilon_r \times 8.85 \times 10^{-12} \times 0.200 \times 0.130}{0.0001} \\
+        \varepsilon_r &= \frac{9.49 \times 10^{-9} \times 0.0001}{8.85 \times 10^{-12} \times 0.200 \times 0.130} \\
+        \varepsilon_r &= 4.127
+    \end{align*}
+    For Capinski's capacitor, we get
+    \begin{align*}
+        9.01 \times 10^{-9} &= \frac{\varepsilon_r \times 8.85 \times 10^{-12} \times 0.200 \times 0.130}{0.0001} \\
+        \varepsilon_r &= \frac{9.01 \times 10^{-9} \times 0.0001}{8.85 \times 10^{-12} \times 0.200 \times 0.130} \\
+        \varepsilon_r &= 3.917
+    \end{align*}
+
+    This average value of 4.022 is close to the theoretical value of 3.8, showing that it is a reasonable value for the relative permittivity of paper.
+    An agreement test for the relative permittivity would be
+    \begin{e}
+        \begin{align*}
+            |4.022 - 3.8| \le 2 \sqrt{0.105^2 + 0.207^2} \\
+            0.222 \le 0.228
+        \end{align*}
+    \end{e}
+    which further justifies the value.
+
 
     \subsection{Conclusion}\label{subsec:part1_conclusion}
+
+    In part 1 of this lab, we measured the time constant of an RC circuit with a known resistor and a DIY capacitor.
+    We found that our time constant was $\tau = 1 \times 10^{3} \times 47 \times 10^{-6} = 47$ ms.
+    This was inside the range of accepted values.
+
+    We also created our own capacitors in this section, trying to make the capacitance as large as possible.
+    For Patel's capacitor, we found the capacitance to be $9.49*10^{-7} \divided 1 \times 10^{6} = 0.949$ F\@.
+    For Capinski's capacitor, we found the capacitance to be $9.01*10^{-7} \divided 1 \times 10^{6} = 0.901$ F\@.
+    The agreement test for both capacitors showed that they were within the range of the theoretical value.
+    This means that the capacitors were constructed correctly and that the capacitance was measured accurately.
+
+    The relative permittivity of paper was found to be 4.022, which is close to the theoretical value of 3.8.
+
 
 
     \section{Part 2A: RLC Underdamped Transient Response}\label{sec:part2a_underdamped}
     \subsection{Methods}\label{subsec:part2a_methods}
     This section covers the first part of experiment 2, which uses an RLC Circuit to find the underdamped transient response. We used a 100 mH inductor, 0.1 µF capacitor, and a 50 Ω resistor (two 100 Ω resistors in parallel), as seen in the following diagram:
-    
+
     \begin{figure}[h]
-    \centering
-    \begin{circuitikz}
-        \draw (0,0) to[battery1, l=$V$] (0,2)
-                    to[inductor, l=$L$] (2,2)
-                    to[capacitor, l=$C$] (4,2)
-                    -- (6,2)
-                    to[R, l=$R$] (6,0)
-                    -- (4,0)
-        \draw (6,2) to[R, l=$R$] (8,2)
-                    -- (8,0)
-                    -- (6,0)
-                    -- (0,0);
-    \end{circuitikz}
-    \caption{Circuit setup for parts 2a and 2b}
+        \centering
+        \begin{circuitikz}
+            \draw (0,0) to[battery1, l=$V$] (0,2)
+            to[inductor, l=$L$] (2,2)
+            to[capacitor, l=$C$] (4,2)
+            -- (6,2)
+            to[R, l=$R$] (6,0)
+            -- (4,0)
+            \draw (6,2) to[R, l=$R$] (8,2)
+            -- (8,0)
+            -- (6,0)
+            -- (0,0);
+        \end{circuitikz}
+        \caption{Circuit setup for parts 2a and 2b}
     \end{figure}
 
-    We also used the function generator to create a signal. We used a 10 Hz square wave with 4 Vpp and an output impedance of 50 Ω. We saw the following wave on our oscilloscope:
+    We also used the function generator to create a signal.
+    We used a 10 Hz square wave with 4 Vpp and an output impedance of 50 Ω.
+    We saw the following wave on our oscilloscope:
 
     todo - picture of part 2a graph
     caption: Graph from experiment 2a
@@ -304,13 +407,24 @@
     \subsection{Methods}\label{subsec:part2b_methods}
     This section covers the second part of experiment 2, which uses an RLC Circuit to find the overdamped transient response. We used a 100 mH inductor, 47 µF capacitor, and a 10 kΩ resistor, as seen in the following diagram:
 
-    todo - picture of part 2b circuit
-    caption: Circuit setup for part 2b
+    \begin{figure}[H]
+        \centering
+        \begin{annotatedFigure}
+        {\includegraphics[width=0.8\linewidth]{resources/images/rlc part 2b setup}}
+            \annotatedFigureBox{0.2923,0.3481}{0.5463,0.5038}{A}{0.2923,0.3481}%bl
+            \annotatedFigureBox{0.3438,0.51}{0.5169,0.6039}{B}{0.3438,0.51}%bl
+            \annotatedFigureBox{0.294,0.6075}{0.5088,0.715}{C}{0.294,0.6075}%bl
+        \end{annotatedFigure}
+        \caption{The setup for part 2b of the lab. (A) is the resistor, (B) is the capacitor, and (C) is the inductor.}
+    \end{figure}
 
     We also used the function generator to create a signal. We used a 50 Hz square wave with 4 Vpp and an output impedance of 50 Ω. We saw the following wave on our oscilloscope:
 
-    todo - picture of part 2b graph
-    caption: Graph from experiment 2b
+    \begin{figure}
+        \centering
+        \includegraphics[width=1.0\linewidth]{resources/images/rlc part 2b graph}
+        \caption{Graph from experiment 2b}
+    \end{figure}
 
     We then recorded the peaks of the wave and recorded them in the following data table:
 
@@ -357,13 +471,11 @@
 
     We can clearly see a large difference in our value for \( \alpha \). We can do an agreement test from equation ~\ref{eq:agreement-test} to test our value for \( \alpha \).
 
-    \begin{e}
-        \begin{align*}
-            |1518.932 - 50000| &\ge 2 \sqrt{30.657^2 + 500^2} \\
-            48481.068 &\ge 2 \sqrt{250939.852} \\
-            48481.068 &\ge 500.93897
-        \end{align*}
-    \end{e}
+    \begin{align*}
+        |1518.932 - 50000| &\ge 2 \sqrt{30.657^2 + 500^2} \\
+        48481.068 &\ge 2 \sqrt{250939.852} \\
+        48481.068 &\ge 500.93897
+    \end{align*}
 
     As we can see, our value for \( \alpha \) is very far outside our accepted range. This could be due to our measured circuit resistance being lower than it actually was. The damping ratio in an RLC circuit could also vary depending on the frequency of the input signal. At certain frequencies, the circuit might exhibit more pronounced oscillations due to resonance effects, resulting in a lower damping ratio. Also, any additional sources of energy loss in the circuit, such as resistance in the connections, stray capacitance, or inductance, could have contributed to the lower value for \( \alpha \).
 
