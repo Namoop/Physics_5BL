@@ -337,9 +337,6 @@
     We used a 10 Hz square wave with 4 Vpp and an output impedance of 50 Ω.
     We saw the following wave on our oscilloscope:
 
-    todo - picture of part 2a graph
-    caption: Graph from experiment 2a
-
     We then recorded the peaks of the wave and recorded them in the following data table:
 
     \begin{table}[h]
@@ -369,9 +366,17 @@
     \subsection{Analysis}\label{subsec:part2a_analysis}
     We divided each voltage we obtained by the effective resistance (125 $\Omega$) in order to fit it to the current equation, although its important to note that this only changes the amplitude. We graphed the new data points and fit them to equation~\ref{eq:current_2a}. We obtained the following graph and its residuals:
 
-    todo input part 2a graph and residuals
-    caption for graph: Underdamped RLC Circuit data and fit
-    caption for residuals: Underdamped RLC Circuit residuals
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.0\linewidth]{resources/images/rlc 2a fit}
+        \caption{Underdamped RLC Circuit data and fit}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.0\linewidth]{resources/images/rlc 2a fit residuals}
+        \caption{Underdamped RLC Circuit residuals}
+    \end{figure}
 
     From this, we can see that our value for x (\( \alpha \)) is 870.141 +/- 31.419 and w (\( \omega \)) is 9706.289 +/- 101.561. Solving for \( \omega_0 \) using equation ~\ref{eq:omega}, we get 9745.214 +/- 101.194. When we solve for those values using theoretical values and the equations~\ref{eq:alpha} and ~\ref{eq:omega-0}, we get the values:
 
@@ -459,9 +464,17 @@
     them to equation ~\ref{eq:capacitor-voltage}. We obtained the following
     graph and its residuals:
 
-    todo input part 2b graph and residuals
-    caption for graph: overdamped RLC Circuit data and fit
-    caption for residuals: overdamped RLC Circuit residuals
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.0\linewidth]{resources/images/rlc 2b fit}
+        \caption{Overdamped RLC Circuit data and fit}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.0\linewidth]{resources/images/rlc 2b fit residuals}
+        \caption{Overdamped RLC Circuit residuals}
+    \end{figure}
 
     From this, we can see that our graph is a good fit, as it goes through or close to all the points. The residuals are also randomly scattered around the 0 line. Our value for A is 0.980 +/- 0.011 and D is 1518.932 +/- 30.657. When we solve for \( \alpha \), it is unnecessary to account for the resistance from the inductor, since the resistor is much larger than the resistance the inductor will provide, allowing us to consider it negligible. Calculating \( \alpha \) using theoretical values and the equation~\ref{eq:alpha}, we get the value:
 
