@@ -129,9 +129,118 @@
 
     
     \section{Part 2: Fixed Length and Frequency, Varying Tension }\label{sec:part_2}
+
+
     \subsection{Methods}\label{subsec:part_2_methods}
+
+    For the second part of this lab, we fixed the length and frequency of the oscillating string, while varying the tension.
+    We made the frequency 30 hz and kept the length at 1.11 meters.
+    Our setup can be seen in the following picture:
+
+    \begin{figure}[H]
+    \centering
+        \begin{annotatedFigure}
+        {\includegraphics[width=1.0\linewidth]{resources/images/2 setup}}
+            \annotatedFigureBox{0.3011,0.5159}{0.729,0.6338}{A}{0.3011,0.5159}%bl
+            \annotatedFigureBox{0.821,0.5348}{0.982,0.6654}{B}{0.821,0.5348}%bl
+            \annotatedFigureBox{0.0268,0.3482}{0.0994,0.5922}{C}{0.0268,0.3482}%bl
+        \end{annotatedFigure}
+    \caption{Part 2 setup, showing (a) as the string, (b) as the string oscillator, and (c) as the pulley and hanging mass (off-screen).}
+    \label{fig:part_2_setup}
+    \end{figure}
+
+    We varied the tension to find harmonics 2--7.
+    This was achieved by changing the hanging mass.
+    When the tension was increased, the harmonics increased.
+    As we found the desired harmonic, we measured the tension, amplitude, and half-tension (which refers to the tension at which the harmonic is the same but the amplitude is half the maximum).
+    The half-measurement was used to form an uncertainty range for the tension.
+    We repeated this process for each harmonic.
+
+    To avoid tediously changing the tension, we estimated how much tension should be applied to the string to achieve the desired harmonic.
+    We then adjusted the tension until the desired harmonic was observed.
+    The equation
+    \begin{align*}
+        n = 2fL \sqrt{\frac{\mu}{T}}
+    \end{align*}
+    relates the harmonic, n, to the tension, T\@.
+    In this equation, $\mu$ is the linear mass density of the string.
+    However, because the string stretches, $\mu$ is not constant.
+    Instead, it changes with tension.
+
+    The adjusted linear mass density is given by
+    \begin{align*}
+        \mu_{stretched} = \frac{\mu_0}{(mk+10)/10}
+    \end{align*}
+    where $mu_0$ is the linear mass density of the string at rest, m is the hanging mass, and k is the spring constant of the string.
+    The spring constant was estimated by measuring the length of a 10cm section of the string as we increased tension.
+
+    With this information, we can calculate the theoretical tension for each harmonic, shown in Figure\ref{fig:theoretical_tension}.
+
+    \begin{figure}[H]
+        \includegraphics[width=0.5\textwidth]{/resources/images/2 theoretical tension graph}
+        \caption{Theoretical tension vs. harmonic graph}
+        \label{fig:theoretical_tension}
+    \end{figure}
+
+    We used this graph to more easily find the desired harmonic.
+
     \subsection{Analysis}\label{subsec:part_2_analysis}
+
+    Our measured data was as follows:
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Harmonic} & \textbf{Mass (g)} & \textbf{Half Mass (g)} \\
+        \hline
+        2 & 340 & 355   \\
+        3 & 200 & 210   \\
+        4 & 120 & 125   \\
+        5 & 80 & 75     \\
+        6 & 55 & 50     \\
+        7 & 40 & 35     \\
+        \hline
+        \end{tabular}
+        \caption{Harmonic tension, amplitudes, and half tensions. The tension is the mass \$times$ gravity.}
+        \label{tab:harmonic_tensions}
+    \end{table}
+
+    We created a graph of our data, plotting tension vs harmonic number.
+    We performed a fit using equation (todo fit equation, number 5 in lab).
+    This fit found both the initial linear mass density and the spring constant.
+    We then plotted the residuals and conducted an agreement test between the theoretical and experimental values of the linear mass density.
+    This gave us the following graphs:
+
+    \begin{figure}[H]
+        \includegraphics[width=0.5\textwidth]{/resources/images/2 measured tension graph}
+        \caption{Tension vs. harmonic graph}
+        \label{fig:measured_tension}
+    \end{figure}
+
+    \begin{figure}[H]
+        \includegraphics[width=0.5\textwidth]{/resources/images/2 measured tension residuals}
+        \caption{Residuals for tension vs. harmonic graph}
+        \label{fig:measured_tension_residuals}
+    \end{figure}
+
+    From these graphs, we can see a linear fit is a good fit for our data, as the line hits all our data points and our residuals are randomly scattered around the 0 line.
+    The agreement test between the theoretical and experimental values of the linear mass density says
+    \begin{align*}
+        |0.0045 - 0.0043| &< 2 \sqrt{(0.0017)^2 + (0.0014)^2} \\
+        0.0002 &< 2 \sqrt{0.00002889 + 0.0000196} \\
+        0.0002 &< 2 \sqrt{0.00004849} \\
+        0.0002 &< 2 \times 0.00696 \\
+        0.0002 &< 0.01392
+    \end{align*}
+    that means our value for linear mass density agrees with the theoretical value.
+
+    From the fit, we can also observe that the spring constant was higher than initially estimated.
+    This is likely due to the string stretching more than we anticipated, or due to a faulty initial estimate.
+    Regardless, the fit was still good, and the agreement test passed.
+
     \subsection{Conclusion}\label{subsec:part_2_conclusion}
+
+    \todo{conclusion}
 
     \section{Part 3: Fixed Tension and Frequency, Varying Length}\label{sec:part_3}
     \subsection{Methods}\label{subsec:part_3_methods}
