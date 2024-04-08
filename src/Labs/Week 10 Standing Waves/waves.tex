@@ -52,7 +52,7 @@
     \subsection{Methods}\label{subsec:part_1_methods}
     In part 1, we fixed the length and tension (the hanging mass) of the string, but varied the frequency to find the harmonics. We hung a 150-gram mass over a pulley from our string. We had a 172 cm string, but only 1 meter was oscillating, as the other 72 cm was hanging off the table. The total mass of the string was 8 grams. Our setup can be seen in the following picture:
 
-    {todo picture of part 1 setup}
+    todo picture of part 1 setup
 
     We varied the frequency to find harmonics 1-7. We measured the frequency, amplitude, and half-frequency, which is the frequency at which the harmonic is the same but the amplitude is half the maximum. We measured the following data:
 
@@ -76,6 +76,45 @@
     \end{table}
     
     \subsection{Analysis}\label{subsec:part_1_analysis}
+    We created a graph of our data, plotting frequency vs harmonic number. We performed a fit using equation (todo fit equation, number 5 in lab). We then plotted the residuals and found the reduced chi-squared value. This gave us the following graphs:
+
+    (todo insert both part 1 graphs. Caption: frequency vs harmonic graph and residuals for part 1.)
+
+    From these graphs, we can see a linear fit is a good fit for our data, as the line hits all our data points and our residuals are randomly scattered around the 0 line. We can then calculate the linear mass density ($\mu$) of the string using equation (todo equation for LMD, in lab notebook)
+    
+    where:
+    \begin{align*}
+    \text{length} &= 1 \, \text{m} \\
+    g &= 9.8 \, \text{m/s}^2 \\
+    \text{tension} &= hanging mass \cdot g\\
+    \end{align*}
+    
+    $\mu$ calculated from the slope is denoted as $\mu_{\text{exp}}$, which is calculated as:
+    
+    \begin{equation}
+    \mu_{\text{exp}} = 0.0043 +- 0.0017 kg/m
+    \end{equation}
+    
+    The theoretical value of $\mu$, denoted as $\mu_{\text{th}}$, is calculated using:
+    
+    \begin{equation}
+    \mu_{\text{th}} = \frac{0.013}{2.92} = 0.0045 +- 0.0014 kg/m
+    \end{equation}
+
+    We can then do an agreement test between the values, using equation (todo agreement equation).
+
+    \begin{align*}
+    |0.0045 - 0.0043| &< 2 \sqrt{(0.0017)^2 + (0.0014)^2} \\
+    0.0002 &< 2 \sqrt{0.00002889 + 0.0000196} \\
+    0.0002 &< 2 \sqrt{0.00004849} \\
+    0.0002 &< 2 \times 0.00696 \\
+    0.0002 &< 0.01392
+    \end{align*}
+
+    From this, we can see that our value for linear mass density agrees with the theoretical value. We can also observe that our chi-squared value was 0.36. This is an acceptable value. This indicates that the experimental data obtained align well with the theoretical model. This suggests that the measurements were carried out accurately and the uncertainties were estimated reliably. The results can be considered trustworthy and can support conclusions drawn from the experiment regarding the behavior of the harmonic oscilalting string. 
+
+
+
     \subsection{Conclusion}\label{subsec:part_1_conclusion}
 
     \section{Part 2: Fixed Length and Frequency, Varying Tension }\label{sec:part_2}
