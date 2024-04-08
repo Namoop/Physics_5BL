@@ -140,7 +140,7 @@
     \begin{figure}[H]
     \centering
         \begin{annotatedFigure}
-        {\includegraphics[width=1.0\linewidth]{resources/images/2 setup}}
+        {\includegraphics[width=1.0\linewidth]{resources/images/p2 setup}}
             \annotatedFigureBox{0.3011,0.5159}{0.729,0.6338}{A}{0.3011,0.5159}%bl
             \annotatedFigureBox{0.821,0.5348}{0.982,0.6654}{B}{0.821,0.5348}%bl
             \annotatedFigureBox{0.0268,0.3482}{0.0994,0.5922}{C}{0.0268,0.3482}%bl
@@ -173,11 +173,12 @@
     \end{align*}
     where $mu_0$ is the linear mass density of the string at rest, m is the hanging mass, and k is the spring constant of the string.
     The spring constant was estimated by measuring the length of a 10cm section of the string as we increased tension.
+    We estimated it around 0.0139 N/m.
 
     With this information, we can calculate the theoretical tension for each harmonic, shown in Figure\ref{fig:theoretical_tension}.
 
     \begin{figure}[H]
-        \includegraphics[width=0.5\textwidth]{/resources/images/2 theoretical tension graph}
+        \includegraphics[width=1\textwidth]{resources/images/p2 theoretical tension graph}
         \caption{Theoretical tension vs. harmonic graph}
         \label{fig:theoretical_tension}
     \end{figure}
@@ -201,44 +202,54 @@
         7 & 40 & 35     \\
         \hline
         \end{tabular}
-        \caption{Harmonic tension, amplitudes, and half tensions. The tension is the mass \$times$ gravity.}
+        \caption{Harmonic tension, amplitudes, and half tensions. The tension is the mass $\times$ gravity.}
         \label{tab:harmonic_tensions}
     \end{table}
 
     We created a graph of our data, plotting tension vs harmonic number.
+    Again, the half-tension was used to form an uncertainty range for the tension, which is shown with error bars in the graph.
     We performed a fit using equation (todo fit equation, number 5 in lab).
     This fit found both the initial linear mass density and the spring constant.
     We then plotted the residuals and conducted an agreement test between the theoretical and experimental values of the linear mass density.
     This gave us the following graphs:
 
     \begin{figure}[H]
-        \includegraphics[width=0.5\textwidth]{/resources/images/2 measured tension graph}
+        \includegraphics[width=1\textwidth]{resources/images/p2 measured tension graph}
         \caption{Tension vs. harmonic graph}
         \label{fig:measured_tension}
     \end{figure}
 
     \begin{figure}[H]
-        \includegraphics[width=0.5\textwidth]{/resources/images/2 measured tension residuals}
+        \includegraphics[width=1\textwidth]{resources/images/p2 measured tension residuals}
         \caption{Residuals for tension vs. harmonic graph}
         \label{fig:measured_tension_residuals}
     \end{figure}
 
     From these graphs, we can see a linear fit is a good fit for our data, as the line hits all our data points and our residuals are randomly scattered around the 0 line.
+    The theoretical linear mass density, from $mu = m / L$, is 0.0045 \pm 0.0014 kg/m.
+    The experimental linear mass density, from the fit, is 0.0052 \pm 0.0017 kg/m.
     The agreement test between the theoretical and experimental values of the linear mass density says
     \begin{align*}
-        |0.0045 - 0.0043| &< 2 \sqrt{(0.0017)^2 + (0.0014)^2} \\
-        0.0002 &< 2 \sqrt{0.00002889 + 0.0000196} \\
-        0.0002 &< 2 \sqrt{0.00004849} \\
-        0.0002 &< 2 \times 0.00696 \\
-        0.0002 &< 0.01392
+        |0.0045 - 0.0052| &< 2 \sqrt{(0.0014)^2 + (0.0017)^2} \\
+        0.0007 &< 2 \sqrt{0.00196 + 0.00289} \\
+        0.0007 &< 2 \sqrt{0.00485} \\
+        0.0007 &< 2 \times 0.0696 \\
+        0.0007 &< 0.01392
     \end{align*}
     that means our value for linear mass density agrees with the theoretical value.
 
-    From the fit, we can also observe that the spring constant was higher than initially estimated.
-    This is likely due to the string stretching more than we anticipated, or due to a faulty initial estimate.
-    Regardless, the fit was still good, and the agreement test passed.
+    From the fit, we can also observe that the spring constant was lower than initially estimated.
+    It is 0.0019 N/m, compared to the initial estimate of 0.0139 N/m.
+    This is likely due to the string stretching less than we anticipated, or due to a faulty initial estimate.
+    Regardless, the fit was still good, and the linear mass density agreement test passed.
 
     \subsection{Conclusion}\label{subsec:part_2_conclusion}
+
+    In this part of the lab, we investigated the relationship between the tension of a vibrating string and the harmonic number.
+    We were able to accurately measure the tensions for the second through seventh harmonics while ensuring proper node placement at both ends of the string.
+    The uncertainties associated with our measurements were then found from the half-amplitude of the oscillations.
+    Plotting the measured tensions against the harmonic number and performing a curve fit showed the fit was appropriate for our data.
+    Ultimately, the linear mass density was found to be 0.0052 \pm 0.0017 kg/m, which was in agreement with the theoretical value of 0.0045 \pm 0.0014 kg/m.
 
     \todo{conclusion}
 
