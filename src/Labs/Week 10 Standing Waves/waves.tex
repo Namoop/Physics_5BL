@@ -150,8 +150,48 @@
     \label{tab:harmonic_lengths}
     \end{table}
 
-    
+
     \subsection{Analysis}\label{subsec:part_3_analysis}
+    We created a graph of our data, plotting LENGTH vs harmonic number. We performed a fit using equation (todo fit equation, number 5 in lab). We then plotted the residuals and found the reduced chi-squared value. This gave us the following graphs:
+
+    (todo insert both part 3 graphs. Caption: LENGTH vs harmonic graph and residuals for part 3.)
+
+    From these graphs, we can see a linear fit is a good fit for our data, as the line hits all our data points and our residuals are randomly scattered around the 0 line. We can then calculate the linear mass density ($\mu$) of the string using equation (todo equation for LMD, in lab notebook)
+    
+    where:
+    \begin{align*}
+    \text{frequency} &= 50 \, \text{Hz} \\
+    g &= 9.8 \, \text{m/s}^2 \\
+    \text{tension} &= 0.150 \cdot g\\
+    \end{align*}
+    
+    $\mu$ calculated from the slope is denoted as $\mu_{\text{exp}}$, which is calculated as:
+    
+    \begin{equation}
+    \mu_{\text{exp}} = 0.0040 +- 0.0017 kg/m
+    \end{equation}
+    
+    The theoretical value of $\mu$, denoted as $\mu_{\text{th}}$, is calculated using:
+    
+    \begin{equation}
+    \mu_{\text{th}} = \frac{0.013}{2.92} = 0.0045 +- 0.0014 kg/m
+    \end{equation}
+
+    We can then do an agreement test between the values, using equation (todo agreement equation).
+
+    \begin{align*}
+    |0.0045 - 0.0040| &< 2 \sqrt{(0.0014)^2 + (0.0017)^2} \\
+    0.0005 &< 2 \sqrt{0.0014^2 + 0.0017^2} \\
+    0.0005 &< 2 \sqrt{0.0000196 + 0.0000289} \\
+    0.0005 &< 2 \sqrt{0.0000485} \\
+    0.0005 &< 2 \times 0.00696 \\
+    0.0005 &< 0.01392
+    \end{align*}
+
+    From this, we can see that our value for linear mass density agrees with the theoretical value. We can also observe that our chi-squared value was 0.22. This is an acceptable value. This indicates that the experimental data obtained align well with the theoretical model. This suggests that the measurements were carried out accurately and the uncertainties were estimated reliably. The results can be considered trustworthy and can support conclusions drawn from the experiment regarding the behavior of the harmonic oscillating string.
+
+
+
     \subsection{Conclusion}\label{subsec:part_3_conclusion}
 
     \section{Lab Conclusion}\label{sec:lab_conclusion}
