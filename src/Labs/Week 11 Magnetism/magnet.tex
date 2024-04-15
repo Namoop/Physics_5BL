@@ -56,6 +56,34 @@
     \section*{Theory}\label{sec:theory}
     \addcontentsline{toc}{section}{Theory}
 
+    Faraday's Law states that the induced electromotive force (EMF) in any closed circuit is equal to the negative rate of change of the magnetic flux through the circuit.
+    Mathematically, this is expressed as:
+    \begin{equation}
+        \varepsilon = -\frac{d\Phi}{dt}
+        \label{eq:faraday}
+    \end{equation}
+    where $\varepsilon$ is the induced EMF, $\Phi$ is the magnetic flux, and $t$ is time.
+    This law is a fundamental principle of electromagnetism and underlies many electrical devices, including generators and motors.
+
+    For a rotating coil in a magnetic field, the induced EMF is proportional to the angular velocity of the coil.
+    This relationship can be expressed as:
+    \begin{equation}
+        \varepsilon = -N\frac{d\Phi}{dt} = -N\frac{d(BA\cos\theta)}{dt} = NBA\omega\sin\theta
+        \label{eq:rotating_coil}
+    \end{equation}
+    where $N$ is the number of turns in the coil, $B$ is the magnetic field strength, $A$ is the area of the coil, $\omega$ is the angular velocity, and $\theta$ is the angle between the magnetic field and the normal to the coil.
+
+    In the context of a solenoid, the induced EMF is given by:
+    \begin{equation}
+        \varepsilon = -N\frac{d\Phi}{dt} = -N\frac{d(BA)}{dt} = -NAB\frac{d\cos\theta}{dt}
+        \label{eq:solenoid}
+    \end{equation}
+    where $N$ is the number of turns in the solenoid, $B$ is the magnetic field strength, $A$ is the area of the cross-section, and $\theta$ is the angle between the magnetic field and the normal to the solenoid.
+
+    In the case of a motor, the interaction between the magnetic field and the current-carrying coil generates a torque that causes the coil to rotate.
+    By controlling the direction and magnitude of the current, the motor can be made to rotate in either direction and at different speeds.
+    This principle forms the basis of electric motors and is essential for a wide range of applications, from household appliances to industrial machinery.
+
 
     \section{Part 1: Creating a Generator with the Earth’s Field}\label{sec:part_1}
 
@@ -95,8 +123,7 @@
 
     \subsection{Analysis}\label{subsec:part_1_analsysis}
 
-    We expect the induced EMF to be proportional to the angular velocity of the IOLab.
-    \todo{from equation something something}
+    We expect the induced EMF to be proportional to the angular velocity of the IOLab from Equation~\ref{eq:solenoid}.
     Using this relationship, we can determine the magnitude of the magnetic field parallel to the Earth's surface at our location.
 
     First, we graph the induced EMF vs the angular velocity of the IOLab.
@@ -168,9 +195,6 @@
     In this part, we attempted to create a motor that transforms electrical energy into kinetic energy. This motor uses a stationary magnet that acts as our magnetic field. We then set two conductors on either side of the magnet and a coil of wire with terminals that can reach out and rest in the conductors. This allows current to flow while also allowing the wire coil to rotate. We then connected one side of a battery to each conductor. 
 
     One of the most important parts of this setup was to only strip part of the coil. On one side, all of the coil needed to be stripped. However, on the other, only one half should be stripped in order to prevent the coil from decelerating itself during the other half-induced current. This took a lot of work and playing around with, but we finally achieved the following setup:
-
-    todo: setup pic part 3
-    caption: Setup for part 3
 
     \begin{figure}[H]
         \centering
