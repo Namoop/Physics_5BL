@@ -58,8 +58,82 @@
 
 
     \section{Part 1: Creating a Generator with the Earth’s Field}\label{sec:part_1}
+
     \subsection{Methods}\label{subsec:part_1_methods}
+    To create a generator using the Earth's magnetic field, we used the setup shown in Figure~\ref{fig:part_1_setup}.
+
+    We hung the IOLab from a spring and coiled magnet wire around it.
+    We then connected the wire to the IOLab and rotated the IOLab around the y-axis.
+    The IOLab then began simple harmonic motion, which caused the wire to move through the Earth's magnetic field.
+    This induced a current in the wire.
+    We then measured the induced current and the angular velocity of the IOLab.
+    As per the lab notebook, we ran it for over a minute.
+
+    A quick check of the recorded voltage (High Gain on the IOLab) showed a quick oscillation enveloped by a slower oscillation, with amplitude decaying proportional to the spring decay.
+    This is shown below in Figure~\ref{fig:high_gain}.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{resources/images/high gain check}
+        \caption{Graph of the high gain vs time.}
+        \label{fig:high_gain}
+    \end{figure}
+
+    \begin{figure}
+        \centering
+        \begin{annotatedFigure}
+        {\includegraphics[width=1.0\linewidth]{resources/images/part 1 setup}}
+            \annotatedFigureBox{0.1672,0.433}{0.4772,0.826}{A}{0.1672,0.433}%bl
+            \annotatedFigureBox{0.2956,0.202}{0.4066,0.327}{B}{0.2956,0.202}%bl
+            \annotatedFigureBox{0.0889,0.86}{0.6288,0.95}{C}{0.0889,0.86}%bl
+            \annotatedFigureBox{0.2358,0.1319}{0.5855,0.392}{D}{0.2358,0.1319}%bl
+        \end{annotatedFigure}
+        \caption{Setup for part 1. (A) shows the spring, (b) shows the wiring, (c) shows the dowel, and (d) shows the IOLab with the coiled around it.}
+        \label{fig:part_1_setup}
+    \end{figure}
+
     \subsection{Analysis}\label{subsec:part_1_analsysis}
+
+    We expect the induced EMF to be proportional to the angular velocity of the IOLab.
+    \todo{from equation something something}
+    Using this relationship, we can determine the magnitude of the magnetic field parallel to the Earth's surface at our location.
+
+    First, we graph the induced EMF vs the angular velocity of the IOLab.
+    This is shown in Figure~\ref{fig:part_1_graph}.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{resources/images/part 1 graph}
+        \caption{Graph of the induced EMF vs the angular velocity of the IOLab.}
+        \label{fig:part_1_graph}
+    \end{figure}
+
+    From this graph, we can determine the slope of the line, which should be equal to the magnitude of the magnetic field parallel to the Earth's surface at our location.
+
+    First, we identify the peaks and troughs of the envelope.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{resources/images/part 1 peaks}
+        \caption{Graph of the peaks and troughs of the envelope.}
+        \label{fig:part_1_peaks_and_troughs}
+    \end{figure}
+
+    For completeness, we will find the slope of both the top-to-bottom and bottom-to-top lines.
+    To get the first line, we take the peaks from the first half and the troughs from the second half.
+    The second line is the opposite.
+    We then fit each line to a linear model and find the slope.
+    The average of these two slopes should be the magnitude of the magnetic field parallel to the Earth's surface at our location.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{resources/images/part 1 slopes}
+        \caption{Graph of the slopes of the top-to-bottom and bottom-to-top lines.}
+        \label{fig:part_1_slopes}
+    \end{figure}
+
+    This results in a slope of $442.370e-6 \pm 8.016e-6$ V/(rad/s) and $-430.052e-6 \pm 9.057e-6$ V/(rad/s).
+
     \subsection{Conclusion}\label{subsec:part_1_conclusion}
 
 
