@@ -46,8 +46,16 @@
 
     In this lab we did 3 experiments to verify Faradays Law. 
     
-    In the first part, we created a generator using the Earth's magnetic field. todo part 1 results
-    
+    In the first part, we created a generator using the Earth's magnetic field.
+    We hung the IOLab from a spring and coiled magnet wire around it.
+    The IOLab caused the wire to move through the Earth's magnetic field, inducing a current.
+    We then measured the induced current and the angular velocity of the IOLab.
+    We then used this data to determine the magnitude of the magnetic field parallel to the Earth's surface at our location.
+    We got a value of $0.012 \pm 0.0002$ T, which was not within the expected range.
+    However, we were able to get a value that was somewhat close to the expected value.
+    This shows that the Earth's magnetic field can be used to generate electricity.
+
+
     In the second part, we verified Faradays Law by creating a solenoid and measuring the induced current. This part was selected as a summary section and will be mentioned again briefly later in the report.
     
     In the third part, we built a motor using the Earth's magnetic field. This part was selected as a summary section and will be mentioned again briefly later in the report.
@@ -86,7 +94,7 @@
 
     To confirm our measurements, we will use an agreement test:
     \begin{equation}
-        \frac{|\text{measured} - \text{expected}|}{\text{uncertainty}} < 2
+        |B_{\text{measured}} - B_{\text{expected}}| < 2 \sqrt{\sigma_{B_{\text{measured}}}^2 + \sigma_{B_{\text{expected}}}^2}
         \label{eq:agreement}
     \end{equation}
 
@@ -175,11 +183,24 @@
     Solving for $B$, we get $B = \frac{\varepsilon}{N A \omega} = \frac{436.211*10^{-6}}{3.5*13*8*10^{-4}} = 0.01198$ T.
     This gives a reported value of $0.012 \pm 0.0002$ T.
 
-    In natural units, this is $11,980 \pm 200$ nT.
-    The horizontal intensity of the field at sea level is around $23,000$ nT.
-
-
+    \clearpage
     \subsection{Conclusion}\label{subsec:part_1_conclusion}
+
+    In natural units, the magnetic field was measured at$11,980 \pm 200$ nT.
+    The horizontal intensity of the field at sea level is around $23,000$ nT.
+    The agreement test in equation~\ref{eq:agreement} shows:
+    \begin{align*}
+        |11,980 - 23,000| &< 2 \sqrt{200^2 + 0.2^2} \\
+        11,020 &< 2 \sqrt{40,000 + 0.04} \\
+        11,020 &< 2 \sqrt{40,000.04} \\
+        11,020 &< 2 * 200 \\
+        110 &< 4
+    \end{align*}
+    This shows that the measured value is not within the expected range.
+    This could be due to the fact that the IOLab was not perfectly vertical, the wire was not perfectly perpendicular to the Earth's magnetic field, or the wire was not perfectly parallel to the Earth's magnetic field.
+    While we weren't able to get the exact value, we were able to get a value that was somewhat close to the expected value.
+    This shows that the Earth's magnetic field can be used to generate electricity, as we were able to generate a current in the wire by moving it through the Earth's magnetic field.
+
 
 
     \section{Part 2: Verifying Faraday’s Law (summary section)}\label{sec:part_2}
@@ -199,8 +220,12 @@
 
     We then plotted the high gain vs the magnetometer and got the following graph:
 
-    todo: high gain vs magnetometer graph
-    caption: part 2 graph of high gain (mv) vs magnetometer (µT)
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{resources/images/part 2 test}
+        \caption{Graph of the high gain (mv) vs the magnetometer (µT).}
+        \label{fig:part_2_graph}
+    \end{figure}
 
     From this graph, we can see that our data looks similar to the sample data given, especially at the extrema. While our data is slightly more noisy, we can see the general shape is approximately even to the sample.
 
