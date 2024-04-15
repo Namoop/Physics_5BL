@@ -68,7 +68,7 @@
     For a rotating coil in a magnetic field, the induced EMF is proportional to the angular velocity of the coil.
     This relationship can be expressed as:
     \begin{equation}
-        \varepsilon = -N\frac{d\Phi}{dt} = -N\frac{d(BA\cos\theta)}{dt} = NBA\omega\sin\theta
+        \varepsilon = -N\frac{d\Phi}{dt} = -N\frac{d(BA\cos\theta)}{dt} = -NBA\omega\sin\theta
         \label{eq:rotating_coil}
     \end{equation}
     where $N$ is the number of turns in the coil, $B$ is the magnetic field strength, $A$ is the area of the coil, $\omega$ is the angular velocity, and $\theta$ is the angle between the magnetic field and the normal to the coil.
@@ -83,6 +83,12 @@
     In the case of a motor, the interaction between the magnetic field and the current-carrying coil generates a torque that causes the coil to rotate.
     By controlling the direction and magnitude of the current, the motor can be made to rotate in either direction and at different speeds.
     This principle forms the basis of electric motors and is essential for a wide range of applications, from household appliances to industrial machinery.
+
+    To confirm our measurements, we will use an agreement test:
+    \begin{equation}
+        \frac{|\text{measured} - \text{expected}|}{\text{uncertainty}} < 2
+        \label{eq:agreement}
+    \end{equation}
 
 
     \section{Part 1: Creating a Generator with the Earth’s Field}\label{sec:part_1}
@@ -123,7 +129,7 @@
 
     \subsection{Analysis}\label{subsec:part_1_analsysis}
 
-    We expect the induced EMF to be proportional to the angular velocity of the IOLab from Equation~\ref{eq:solenoid}.
+    We expect the induced EMF to be proportional to the angular velocity of the IOLab from Equation~\ref{eq:rotating_coil}.
     Using this relationship, we can determine the magnitude of the magnetic field parallel to the Earth's surface at our location.
 
     First, we graph the induced EMF vs the angular velocity of the IOLab.
@@ -160,9 +166,16 @@
         \label{fig:part_1_slopes}
     \end{figure}
 
-    This results in a slope of $442.370e-6 \pm 8.016e-6$ V/(rad/s) and $-430.052e-6 \pm 9.057e-6$ V/(rad/s).
+    This results in a slope of $442.370*10^{-6} \pm 8.016*10^{-6}$ V/(rad/s) and $-430.052*10^{-6} \pm 9.057*10^{-6}$ V/(rad/s).
 
-    The average of these two slopes is $6.159e-6 \pm 8.536e-6$ V/(rad/s).
+    The average of the two slopes is $436.211*10^{-6} \pm 8.536*10^{-6}$ V/(rad/s).
+
+    Using Equation~\ref{eq:rotating_coil}, we can solve for the magnetic field strength.
+    We know that $N = 3.5$, $A = 13*8*10^{-4}$ m$^2$, and $\sin\theta = 1$.
+    Solving for $B$, we get $B = \frac{\varepsilon}{N A \omega} = \frac{436.211*10^{-6}}{3.5*13*8*10^{-4}} = 0.0004$ T.
+    In nano-Teslas, this is $400$ nT.
+
+
 
     \subsection{Conclusion}\label{subsec:part_1_conclusion}
 
