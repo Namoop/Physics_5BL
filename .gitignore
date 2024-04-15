@@ -1,5 +1,2 @@
 .idea
-*.aux
-*.log
-*.out
-*.toc
+out
