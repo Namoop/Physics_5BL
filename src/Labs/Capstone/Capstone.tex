@@ -1,0 +1,70 @@
+%! suppress = EscapeHashOutsideCommand
+%! Author = Theodore Capinski
+%! Date = 4/7/2024
+
+% Preamble
+\documentclass[11pt]{article}
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+\setcounter{section}{-1}
+\counterwithin{figure}{section}
+
+% Packages
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{indentfirst}
+\usepackage{calc}
+\usepackage{float}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Overlay Generator - Annotated Figures v0.0.1
+% Created with http://ff.cx/latex-overlay-generator/
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\annotatedFigureBoxCustom{bottom-left}{top-right}{label}{label-position}{box-color}{label-color}{border-color}{text-color}
+\newcommand*\annotatedFigureBoxCustom[8]{\draw[#5,thick,rounded corners] (#1) rectangle (#2);\node at (#4) [fill=#6,thick,shape=circle,draw=#7,inner sep=2pt,font=\sffamily,text=#8] {\textbf{#3}};}
+%\annotatedFigureBox{bottom-left}{top-right}{label}{label-position}
+\newcommand*\annotatedFigureBox[4]{\annotatedFigureBoxCustom{#1}{#2}{#3}{#4}{white}{white}{black}{black}}
+\newcommand*\annotatedFigureText[4]{\node[draw=none, anchor=south west, text=#2, inner sep=0, text width=#3\linewidth,font=\sffamily] at (#1){#4};}
+\newenvironment {annotatedFigure}[1]{\centering\begin{tikzpicture}
+                                                   \node[anchor=south west,inner sep=0] (image) at (0,0) { #1};\begin{scope}[x={(image.south east)},y={(image.north west)}]}{\end{scope}\end{tikzpicture}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\todo}[1]{\textcolor{red}{TODO: #1}\PackageWarning{TODO:}{#1!}}
+
+\title{Physics 5BL Lab Report Capstone Project}
+\author{T.~Capinski, A.~Patel \and B. Davis}
+
+% Document
+\begin{document}
+    \maketitle
+    \tableofcontents
+
+    \section*{Introduction}\label{sec:introduction}
+    \addcontentsline{toc}{section}{Introduction}
+
+
+    \section*{Theory}\label{sec:theory}
+    \addcontentsline{toc}{section}{Theory}
+
+
+    \section{Part 1: Testing different variables}\label{sec:part_1}
+    \subsection{Methods}\label{subsec:part_1_methods}
+    \subsection{Analysis}\label{subsec:part_1_analsysis}
+    \subsection{Conclusion}\label{subsec:part_1_conclusion}
+
+    \section{Part 2: Creating our own solonoid }\label{sec:part_2}
+    \subsection{Methods}\label{subsec:part_2_methods}
+    \subsection{Analysis}\label{subsec:part_2_analsysis}
+    \subsection{Conclusion}\label{subsec:part_2_conclusion}
+
+    \section{Lab Conclusion}\label{sec:lab_conclusion}
+
+
+
+    \appendix
+    \section{References}\label{sec:references}
+
+    Lab Manual
+\end{document}
