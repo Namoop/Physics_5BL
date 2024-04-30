@@ -376,14 +376,56 @@
     Agreement tests showed that our analysis was correct.
     Overall, we were able to verify how the radius of the solenoid affected the peak current.
 
-    \section{Adding an iron core}\label{sec:part_3}
-
+    \section{Adding a steel core}\label{sec:part_3}
     \subsection{Methods}\label{subsec:part_3_methods}
+    In part 3, we changed the self-inductance of the solenoid by adding a steel core to the inside of it. Our base setup can be seen in the following diagram:
+
+    todo add solenoid pic
+    caption: Setup for experiment 3 using without steel core. The setup with the steel core is the same, except the steel core is inside the solenoid.
+
+    In this setup, we used 110 grams of mass hanging from the spring with 2 magnets attached to it. 3 premade solenoids were attached, each having 4000 coils. As can be seen in the setup, we used 2 IOLabs - 1 for measuring induced voltage, and the other for measuring spring motion, which did not end up being necessary to use. We then did the following experiments: To perform each experiment, we used the following procedure:
+
+    \begin{enumerate}
+        \item Set up the solenoid
+        \item Hook up the solenoid to an IOLab
+        \item Hang the magnet from the spring
+        \item Raise the magnet to the maximum height
+        \item Release the magnet
+        \item Use the IOLabs to measure the peak current and magnetic field strength
+        \item Record around 15--30 seconds of data
+        \item Repeat steps 3--6 for each variable (number of turns, number of magnets, mass on the spring)
+    \end{enumerate}
+
+    Since we were unable to get the exact self-inductance of the steel core, as we didn't know exactly what it was or its self-inductance, this section involved more qualitative analysis and comparison between our two trials. Our first trial was the base setup (without the steel core), with the second being the same setup but with the steel core placed inside the solenoid.
 
     \subsection{Analysis}\label{subsec:part_3_analsysis}
+    When we ran this experiment, we got the following raw data:
 
+    todo raw graphs for experiment 3
+    caption: Data for experiment 3. The graph titled 'Voltage vs Time for Non-Steel Core Trial' is the data for the trial without the steel core inside. The graph titled 'Voltage vs Time for Steel Core Trial' is the data for the trial with the steel core inside. 
+
+    From this data, we can see that there is a larger damping coefficient for the trial without the steel core. We can see this from the time scale on the x-axis. For the non-steel core trial, the axis has a domain of 0-10 seconds, while the steel core trial ranges from 0-27 seconds. This most likely stems from the fact that the steel core was providing a force on the magnet, which allowed it to maintain a larger amplitude for longer when compared to the trial without the steel core.
+    We can also see that the peaks for the trial with the steel core are larger than the non-steel core trial. When we follow a similar procedure as before and account for damping using the peaks of the data, we get the following graphs with adjusted peaks, average voltage lines for these peaks, and their residuals:
+
+    todo put in graphs and residuals
+    FIRST: graphs side by side
+    caption: Data for experiment 3 with peaks accounted for damping. The graph titled 'Voltage vs Time for Non-Steel Core Trial With Adjusted Peaks' is the data for the trial without the steel core inside. The graph titled 'Voltage vs Time for Steel Core Trial With Adjusted Peaks' is the data for the trial with the steel core inside. 
+    SECOND: residuals side by side
+    caption: Residuals for average lines for experiment 3 with peaks accounted for damping. The graph titled 'Residuals for Peaks of Non-Steel Core Trial With Adjusted Peaks' is the data for the trial without the steel core inside. The graph titled 'Residuals for Peaks of Steel Core Trial With Adjusted Peaks' for the trial with the steel core inside.
+
+    As we can see from these graphs, we have a larger average voltage for the trial with the steel core inside the solenoid. This value was 0.39 Volts, while the other was 0.35 Volts. However, when we look at the residuals, we can see a pretty clear quadratic pattern in the residuals for the trial with the steel core, while the trial without has no clear pattern. This may also be due to the steel core providing an additional force on the magnet that we have not accounted for during the damping. This tells us that a linear damping fit may not be best for this trial. However, when we do an exponential fitting, we get a very similar graph and the same value for voltage of 0.39 Volts. We can use Equation~\ref{eq:agreement} to check if our values differ enough to conclude a difference in our trials.
+
+    \begin{align*}
+        |0.39 - 0.35| &< 2 \sqrt{0.02^2 + 0.02^2} \\
+        0.04 &< 0.057
+    \end{align*}
+
+    As we can see, the difference in values is inside our error analysis, and we are unable to conclude that adding a steel core increases the self-inductance and thus the induced emf inside a solenoid.
+
+    
     \subsection{Conclusion}\label{subsec:part_3_conclusion}
-
+    In conclusion, we found that adding a steel core to the solenoid did not affect the induced voltage enough to conclude that it increases the self-inductance of the solenoid. This was inconsistent with our prediction because as we can see from equation (todo equation emf = L dI/dt), adding the steel core increases the self-inductance (L) and thus the emf. This may be due to an error inside of our lab. One large unaccounted source of error is the magnetic force from the steel core on the magnet and oscillating masses. While we thought this may have affected the damping of the oscillations (which is decreased), it may have also had an effect on the induced emf in an unpredicted way. We also may have not been precise enough when initializing our magnet's oscillations, as it was hard to keep it exactly the same for each trial. Overall, we were unable to conclude that adding a steel core to the solenoid increased the self-inductance.
+    
 
     \section{Lab Conclusion}\label{sec:lab_conclusion}
 
