@@ -17,6 +17,7 @@
 \usepackage{indentfirst}
 \usepackage{calc}
 \usepackage{float}
+\usepackage{amssymb}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % LaTeX Overlay Generator - Annotated Figures v0.0.1
@@ -46,13 +47,13 @@
 
     In this report, we will be discussing the results of our capstone project.
     The project was split into three parts.
-    The first part was to test different variables in a solenoid to see how they affect the magnetic field.
+    The first part was to test different variables in a solenoid to see how they affect the induced current.
     We relied on the formula
     \begin{equation}
         \Epsilon = -N A \frac{d\Phi}{dt}
         \label{eq:emf}
     \end{equation}
-    to predict how the magnetic field would change.
+    to predict how the voltage would change.
     The second part was to create our own solenoid and test it.
     The third part was to add an iron core to the solenoid to see how it affected the magnetic field.
 
@@ -68,12 +69,16 @@
     The result was a voltage $1.92 \times$ as strong as the original setup.
     This agreed with our prediction.
 
+    We then added mass to the spring, which we expected to increase the maximum speed of the magnet, and therefore the rate of change of the magnetic field.
+    This led to a voltage $1.02 \times$ as strong as the original setup.
+    We realized we had made a mistake in our prediction.
+    The mass on the spring does not actually affect the peak current, but rather the damping of the spring.
+    By doing the math again, we found that the data was consistent with our new prediction.
+
     We then tested how the number of magnets affected the peak current.
     We doubled the number of magnets, so based on Equation~\ref{eq:emf}, we expected the peak current to double.
-    The result was a voltage $3.74 \times$ as strong as the original setup.
+    The result was a voltage $1.78 \times$ as strong as the original setup.
 
-    We then added mass to the spring, which increased the maximum speed of the magnet, and therefore the rate of change of the magnetic field.
-    This led to a voltage $3.26 \times$ as strong as the original setup.
 
     Finally, we built our own solenoids.
     We did this because we could not vary the radius of the solenoid in the lab.
@@ -92,16 +97,231 @@
     \section*{Theory}\label{sec:theory}
     \addcontentsline{toc}{section}{Theory}
 
+    Faraday’s Law states that a changing magnetic flux B through a single loop will induce an electromotive force (EMF), $\epsilon = -\frac{dB}{dt}$.
+    Faraday’s Law is applicable to all loops, whether real or imaginary, but it is most readily noticeable in a conducting loop where the induced EMF initiates a current.
+    This current then produces its own magnetic field, adding to the flux within the loop.
 
-    \section{Part 1: Testing different variables}\label{sec:part_1}
+    The presence of a negative sign in the equation is a manifestation of Lenz’s law, which stipulates that the induced EMF current always opposes the change in flux that causes it.
+    On this principle, electric motors and generators operate.
+    As we work on building one, let's dive deeper into how it functions.
+
+    \todo{Picture (how generators work). Some theory + formulas.}
+
+    To check that our analysis is correct, we can use agreement test
+    \begin{equation}
+        |R_{\text{measured}} - R_{\text{expected}}| < 2 \sqrt{\sigma_{R_{\text{measured}}}^2 + \sigma_{R_{\text{expected}}}^2}
+        \label{eq:agreement}
+    \end{equation}
+    where $R_{\text{measured}}$ is the measured ratio, $R_{\text{expected}}$ is the expected ratio, and $\sigma$ is the uncertainty in the measurement.
+
+    \section{Testing different variables}\label{sec:part_1}
+
     \subsection{Methods}\label{subsec:part_1_methods}
+
+    To test how different variables affect induced current, we set up a solenoid with a constant number of turns.
+    We then hung a magnet from a spring and let it oscillate in the solenoid.
+    This created a changing magnetic field, which induced a current in the solenoid.
+    We measured the peak current for each setup to see how the induced current changed.
+
+    To measure the peak current, we hooked up the solenoid to an IOLab.
+    One wire connected to the ground and another connected to A7.
+    As the current was induced in the solenoid, it created a voltage across the solenoid.
+
+    Additionally, we placed an IOLab directly above the spring to measure the strength of the magnetic field.
+    This we used mostly indirectly in the analysis to compare positions of the magnet between trials, and to verify some data.
+
+    \begin{figure}[H]
+        \centering
+        \begin{annotatedFigure}
+        {\includegraphics[width=1.0\linewidth]{resources/images/part1a setup}}
+            \annotatedFigureBox{0.378,0.6032}{0.577,0.9314}{A}{0.378,0.6032}%bl
+            \annotatedFigureBox{0.414,0.0902}{0.613,0.4184}{B}{0.414,0.0902}%bl
+            \annotatedFigureBox{0.48,0.2363}{0.546,0.4036}{C}{0.48,0.2363}%bl
+            \annotatedFigureBox{0.618,0.1191}{0.8,0.269}{D}{0.618,0.1191}%bl
+        \end{annotatedFigure}
+        \caption{Our setup for testing different variables in a solenoid. (A) Magnetic Field IOLAb, (B) Solenoid, (C) Magnet, (D) Voltage IOLab.}
+        \label{fig:part1a_setup}
+    \end{figure}
+
+    Our procedure consisted of the following steps:
+    \begin{enumerate}
+        \item Set up the solenoid
+        \item Hook up the solenoid to an IOLab
+        \item Hang the magnet from the spring
+        \item Raise the magnet to the maximum height
+        \item Release the magnet
+        \item Use the IOLabs to measure the peak current and magnetic field strength
+        \item Record around 15--30 seconds of data
+        \item Repeat steps 3--6 for each variable (number of turns, number of magnets, mass on the spring)
+    \end{enumerate}
+
+    Overall, the setup worked well.
+    We had some issues with the IOLab not measuring the peak current correctly, but we were able to fix this by adjusting the settings on the IOLab.
+    We also had some issues with the magnet remaining attached to the weight set, but we were able to fix this using tape.
+    We noticed that the spring would sway side to side as the magnet oscillated, but we determined that this did not significantly affect the results.
+
     \subsection{Analysis}\label{subsec:part_1_analsysis}
+
+    We first tested how the number of turns affected the peak current.
+    We set up the solenoid with a constant number of turns and one magnet.
+    We then doubled the number of turns by adding another solenoid in series.
+    Based on Equation~\ref{eq:emf}, we expected the peak current to double.
+
+    We want to find how the induced voltage in the first setup compares to the induced voltage in the second setup.
+
+    First, our data is in the form of an oscillating current.
+    We want to find the peak current for each setup.
+    This can be done by taking all the peaks of the oscillation as our data points.
+    Figure \ref{fig:part1_peak_points} shows the current induced in the solenoid for the second setup.
+    This was done for each setup, though it will not be shown.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{resources/images/part1 peak points}
+        \caption{Graph of the current induced in the solenoid for the second setup, with peaks highlighted.}
+        \label{fig:part1_peak_points}
+    \end{figure}
+
+    However, before averaging the peaks, we notice the damping.
+    This is from the spring, which is not ideal.
+    On some trials it is more noticeable than others, but it is always present.
+    To be able to compare the two setups, we need to remove the damping.
+    Luckily, the damping is linear, so we can fit a line to the damping.
+    Then, we can use this line to straighten out the peaks, as if there was no damping.
+    While this propagates some error, it is the best we can do.
+    The result is shown in Figure \ref{fig:part1a_straightened_points}.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{resources/images/part1a peaks straightened}
+        \caption{Graph of the current induced in the solenoid for the first and second setup, with peaks straightened out.}
+        \label{fig:part1a_straightened_points}
+    \end{figure}
+
+    Now, we can compare the two setups.
+    As seen in Figure \ref{fig:part1_straightened_points}, the baseline has been fit to a line.
+    This, by design, has a slope of 0.
+    It is effectively the average of the baseline peaks.
+    The second setup has been straightened out, and the peaks are now easier to compare.
+
+    We can now take each point from the second setup and divide it by the average of the baseline.
+    This will give us the ratio of the two setups.
+    We can then average these ratios to find the average ratio of the two setups.
+    This will give us the factor by which the peak current increased.
+    This is shown in Figure \ref{fig:part1a_ratios}.
+    Note that this graph also shows that the data points are randomly distributed around the average.
+    This implies that the damping was removed correctly, as no pattern is visible.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{resources/images/part1a ratios}
+        \caption{Graph of the ratio of the two setups.}
+        \label{fig:part1a_ratios}
+    \end{figure}
+
+    The average ratio of the two setups was 1.92.
+    This means that the peak current in the second setup was 1.92 times as strong as the peak current in the first setup.
+    This is consistent with our prediction.
+    We can use Equation~\ref{eq:agreement} to check if our analysis is correct.
+
+    \begin{align*}
+        |1.92 - 2| &< 2 \sqrt{0.20^2 + 0.02^2} \\
+        0.08 &< 0.40
+    \end{align*}
+
+    We then tested how the mass on the spring affected the peak current.
+    We expected the mass to increase the maximum speed of the magnet, and therefore the rate of change of the magnetic field.
+    This would lead to a stronger induced current.
+    We added mass to the spring and repeated the experiment.
+    The result was a voltage 1.02 times as strong as the original setup.
+    This can be seen in both Figure \ref{fig:part1b_damping} and Figure \ref{fig:part1b_ratios}.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{resources/images/part1b damping}
+        \caption{Graph of the current induced in the solenoid for the first and second setup, with damping.}
+        \label{fig:part1b_damping}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{resources/images/part1b ratios}
+        \caption{Graph of the ratio of the two setups. The ratio is only about 1, implying that the mass does not affect the peak current.}
+        \label{fig:part1b_ratios}
+    \end{figure}
+
+    We realized we had made a mistake in our prediction.
+    The mass on the spring does not actually affect the peak current, but rather the damping of the spring.
+    By doing the math again, we found that the data was consistent with our new prediction.
+    The damping was twice as strong in the second setup, which is consistent with the mass being doubled.
+    It went from $4.98 \mu~V/s $ to $9.05 \mu~V/s$.
+    This is shown in Figure \ref{fig:part1b_fits}.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{resources/images/part1b fits}
+        \caption{Graph of the damping in the second setup.}
+        \label{fig:part1b_fits}
+    \end{figure}
+
+    Finally, we tested how the number of magnets affected the peak current.
+    We doubled the number of magnets, so based on Equation~\ref{eq:emf}, we expected the peak current to double.
+    After repeating the analysis steps, we found that the result was a voltage 1.78 times as strong as the original setup.
+    This is shown in both Figure \ref{fig:part1c_damping} and Figure \ref{fig:part1c_ratios}.
+    This number is consistent with our prediction.
+
+    We can use Equation~\ref{eq:agreement} to check if our analysis is correct.
+    The uncertainty is higher because the damping is higher, but the result is still consistent.
+
+    \begin{align*}
+        |1.78 - 2| &< 2 \sqrt{0.29^2 + 0.02^2} \\
+        0.22 &< 0.58
+    \end{align*}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{resources/images/part1c damping}
+        \caption{Graph of the current induced in the solenoid for the first and second setup, with damping.}
+        \label{fig:part1c_damping}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{resources/images/part1c ratios}
+        \caption{Graph of the ratio of the two setups.}
+        \label{fig:part1c_ratios}
+    \end{figure}
+
+
     \subsection{Conclusion}\label{subsec:part_1_conclusion}
 
-    \section{Part 2: Creating our own solonoid }\label{sec:part_2}
+    In conclusion, we verified how the number of turns, the number of magnets, and the mass on the spring affected the peak current.
+    Most of our results were consistent with our predictions, but there were some discrepancies.
+    We found that the number of turns and the number of magnets both affected the peak current as expected.
+    However, the mass on the spring did not affect the peak current, but rather the damping of the spring.
+    This was a mistake in our prediction, but we were able to correct it.
+    Agreement tests showed that our analysis was correct for turns and magnets.
+    We did not do an agreeement test for the mass change, as the goal of this experiment was to verify how different variables affected the peak current.
+    However, we included it in the analysis to show how we corrected our mistake.
+    Overall, we were able to verify how different variables affected the peak current in a solenoid.
+
+
+    \section{Creating our own solenoid}\label{sec:part_2}
+
     \subsection{Methods}\label{subsec:part_2_methods}
+
     \subsection{Analysis}\label{subsec:part_2_analsysis}
+
     \subsection{Conclusion}\label{subsec:part_2_conclusion}
+
+    \section{Adding an iron core}\label{sec:part_3}
+
+    \subsection{Methods}\label{subsec:part_3_methods}
+
+    \subsection{Analysis}\label{subsec:part_3_analsysis}
+
+    \subsection{Conclusion}\label{subsec:part_3_conclusion}
+
 
     \section{Lab Conclusion}\label{sec:lab_conclusion}
 
