@@ -35,7 +35,7 @@
 \newcommand{\todo}[1]{\textcolor{red}{TODO: #1}\PackageWarning{TODO:}{#1!}}
 
 \title{Physics 5BL Lab Report Capstone Project}
-\author{T.~Capinski, B. Davis \and A.~Patel}
+\author{T.~Capinski \and B.~Davis \and A.~Patel}
 % Document
 \begin{document}
     \maketitle
@@ -211,7 +211,7 @@
     \end{figure}
 
     Now, we can compare the two setups.
-    As seen in Figure \ref{fig:part1_straightened_points}, the baseline has been fit to a line.
+    As seen in Figure \ref{fig:part1a_straightened_points}, the baseline has been fit to a line.
     This, by design, has a slope of 0.
     It is effectively the average of the baseline peaks.
     The second setup has been straightened out, and the peaks are now easier to compare.
@@ -392,8 +392,18 @@
     \subsection{Methods}\label{subsec:part_3_methods}
     In part 3, we changed the self-inductance of the solenoid by adding a steel core to the inside of it. Our base setup can be seen in the following diagram:
 
-    todo add solenoid pic
-    caption: Setup for experiment 3 using without steel core. The setup with the steel core is the same, except the steel core is inside the solenoid.
+    \begin{figure}[H]
+        \centering
+        \begin{annotatedFigure}
+        {\includegraphics[width=1.0\linewidth]{resources/images/part3 setup}}
+            \annotatedFigureBox{0.3838,0.146}{0.6938,0.644}{A}{0.3838,0.146}%bl
+            \annotatedFigureBox{0.2318,0.046}{0.4459,0.256}{B}{0.2318,0.046}%bl
+            \annotatedFigureBox{0.1963,0.198}{0.3818,0.45}{C}{0.1963,0.198}%bl
+            \annotatedFigureBox{0.4466,0.488}{0.6466,0.608}{D}{0.4466,0.488}%bl
+        \end{annotatedFigure}
+        \caption{Our setup for adding a steel core to the solenoid. (A) Solenoids, (B) Voltage IOLab, (C) Steel Core, (D) Magnet and Mass. The steel core was placed inside the solenoids.}
+        \label{fig:part3_setup}
+    \end{figure}
 
     In this setup, we used 110 grams of mass hanging from the spring with 2 magnets attached to it. 3 premade solenoids were attached, each having 4000 coils. As can be seen in the setup, we used 2 IOLabs - 1 for measuring induced voltage, and the other for measuring spring motion, which did not end up being necessary to use. We then did the following experiments: To perform each experiment, we used the following procedure:
 
@@ -412,8 +422,13 @@
     \subsection{Analysis}\label{subsec:part_3_analsysis}
     When we ran this experiment, we got the following raw data:
 
-    todo raw graphs for experiment 3
-    caption: Data for experiment 3. The graph titled 'Voltage vs Time for Non-Steel Core Trial' is the data for the trial without the steel core inside. The graph titled 'Voltage vs Time for Steel Core Trial' is the data for the trial with the steel core inside. 
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{resources/images/part3 graphs}
+        \caption{Data for experiment 3. The graph titled 'Voltage vs Time for Non-Steel Core Trial' is the data for the trial without the steel core inside. The graph titled 'Voltage vs Time for Steel Core Trial' is the data for the trial with the steel core inside.}
+        \label{fig:part3_graphs}
+    \end{figure}
+
 
     From this data, we can see that there is a larger damping coefficient for the trial without the steel core. We can see this from the time scale on the x-axis. For the non-steel core trial, the axis has a domain of 0-10 seconds, while the steel core trial ranges from 0-27 seconds. This most likely stems from the fact that the steel core was providing a force on the magnet, which allowed it to maintain a larger amplitude for longer when compared to the trial without the steel core.
     We can also see that the peaks for the trial with the steel core are larger than the non-steel core trial. When we follow a similar procedure as before and account for damping using the peaks of the data, we get the following graphs with adjusted peaks, average voltage lines for these peaks, and their residuals:
@@ -423,6 +438,18 @@
     caption: Data for experiment 3 with peaks accounted for damping. The graph titled 'Voltage vs Time for Non-Steel Core Trial With Adjusted Peaks' is the data for the trial without the steel core inside. The graph titled 'Voltage vs Time for Steel Core Trial With Adjusted Peaks' is the data for the trial with the steel core inside. 
     SECOND: residuals side by side
     caption: Residuals for average lines for experiment 3 with peaks accounted for damping. The graph titled 'Residuals for Peaks of Non-Steel Core Trial With Adjusted Peaks' is the data for the trial without the steel core inside. The graph titled 'Residuals for Peaks of Steel Core Trial With Adjusted Peaks' for the trial with the steel core inside.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{resources/images/part3 peaks1}
+        \caption{Data for experiment 3 with peaks accounted for damping. The graph titled 'Voltage vs Time for Non-Steel Core Trial With Adjusted Peaks' is the data for the trial without the steel core inside. The graph titled 'Voltage vs Time for Steel Core Trial With Adjusted Peaks' is the data for the trial with the steel core inside. Also shown: residuals for average lines for experiment 3 with peaks accounted for damping. The graph titled 'Residuals for Peaks of Non-Steel Core Trial With Adjusted Peaks' is the data for the trial without the steel core inside. The graph titled 'Residuals for Peaks of Steel Core Trial With Adjusted Peaks' for the trial with the steel core inside.}
+        \label{fig:part3_peaks}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{resources/images/part3 peaks2}
+    \end{figure}
 
     As we can see from these graphs, we have a larger average voltage for the trial with the steel core inside the solenoid. This value was 0.39 Volts, while the other was 0.35 Volts. However, when we look at the residuals, we can see a pretty clear quadratic pattern in the residuals for the trial with the steel core, while the trial without has no clear pattern. This may also be due to the steel core providing an additional force on the magnet that we have not accounted for during the damping. This tells us that a linear damping fit may not be best for this trial. However, when we do an exponential fitting, we get a very similar graph and the same value for voltage of 0.39 Volts. We can use Equation~\ref{eq:agreement} to check if our values differ enough to conclude a difference in our trials.
 
